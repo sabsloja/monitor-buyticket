@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Story — Ação Social · A Promessa de Abraão</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" crossorigin="anonymous" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&display=swap">
+<link rel="stylesheet" href="assets/marca.css">
+<style>
+  .acao { padding: 0 80px 250px; display: flex; flex-direction: column; }
+
+  /* foto ocupa o topo inteiro, com a borda de baixo em curva (um abraço) */
+  .s-foto-area { position: absolute; left: 0; right: 0; top: 0; height: 820px; }
+  .s-foto-area .foto { position: absolute; inset: 0; border-radius: 0 0 50% 50% / 0 0 140px 140px; background: var(--urucum); }
+  .s-foto-area .foto-vazia { border-radius: 0 0 50% 50% / 0 0 140px 140px; border-color: rgba(247, 238, 226, .75); color: var(--areia); padding-top: 220px; }
+  .s-foto-area .foto { --pos-y: 50%; }
+  .s-selo { position: absolute; right: 86px; bottom: -70px; width: 190px; height: 190px; border-radius: 50%; background: var(--ouro); display: flex; align-items: center; justify-content: center; box-shadow: 0 16px 40px rgba(30, 29, 74, .25); z-index: 3; }
+  .s-selo [data-estrela] { width: 104px; height: 104px; }
+
+  /* sem foto: o topo vira um painel de cobogó em urucum */
+  .s-sem-foto { position: absolute; inset: 0; border-radius: 0 0 50% 50% / 0 0 140px 140px; display: none; background-color: var(--urucum); }
+  .sem-foto .s-foto-area .foto { display: none; }
+  .sem-foto .s-sem-foto { display: block; }
+
+  .acao > .conteudo { position: relative; z-index: 2; display: flex; flex-direction: column; flex: 1; margin-top: 880px; }  /* margem (e não padding) para não cobrir a foto e bloquear o clique */
+  .sem-foto > .conteudo { margin-top: 700px; }
+  .sem-foto .s-foto-area { height: 640px; }
+
+  .s-chamada { color: var(--urucum); }
+  .s-titulo { font-size: 100px; line-height: .98; margin-top: 18px; color: var(--anil); max-height: 220px; overflow: hidden; }
+  .s-texto { font-size: 36px; line-height: 1.36; margin-top: 26px; color: var(--anil); opacity: .88; max-height: 150px; overflow: hidden; }
+
+  .s-precisa { margin-top: 30px; font: 700 24px/1.2 var(--fonte-texto); letter-spacing: .2em; text-transform: uppercase; color: var(--anil); opacity: .7; }
+  .s-itens { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 16px; }
+  .s-itens span { border: 3px solid var(--urucum); color: var(--urucum); border-radius: 999px; padding: 12px 26px 11px; font: 700 30px/1.1 var(--fonte-texto); }
+
+  .s-barra { margin-top: auto; background: var(--urucum); color: var(--areia); border-radius: 40px; padding: 34px 44px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .s-quando { font: 700 36px/1.2 var(--fonte-texto); }
+  .s-onde { font: 400 28px/1.3 var(--fonte-texto); opacity: .92; margin-top: 4px; }
+  .s-cta { flex: none; font: 600 italic 40px/1.05 var(--fonte-titulo); font-variation-settings: 'SOFT' 100; text-align: right; max-width: 330px; color: var(--areia); }
+
+  .s-logo { height: 66px; margin-top: 34px; align-self: center; }
+  .s-logo svg { width: auto; height: 66px; }
+</style>
+</head>
+<body data-template="story-acao-social" data-titulo="Story — Ação Social">
+<main class="palco">
+
+  <!-- =====================================================================
+       STORY 1080 × 1920 — AÇÃO SOCIAL NA RUA
+       No navegador: clique na área da foto para escolher a imagem (ou
+       desmarque "Usar foto" no painel), clique nos textos e baixe o PNG.
+       Pelo código: procure os comentários "TROQUE AQUI".
+
+       CUIDADO COM AS FOTOS: só publique o rosto de alguém atendido com a
+       autorização da pessoa. Prefira fotos dos voluntários, das mãos
+       servindo, da comida, do lugar.
+       ===================================================================== -->
+  <div class="arte story tema-areia acao" data-arquivo="story-acao-social">
+
+    <div class="s-foto-area">
+      <div class="s-sem-foto" data-cobogo="#F7EEE2" data-cobogo-opacidade=".12" data-cobogo-tamanho="150"></div>
+      <!-- ===================== FOTO DA AÇÃO =====================
+           TROQUE AQUI: a foto (horizontal ou vertical, tanto faz).
+           Pelo código: copie a foto para templates/fotos/ e escreva o
+           nome dentro de src="", ex.: <img src="fotos/sopao.jpg" alt="">
+           ======================================================== -->
+      <div class="foto" data-foto="Foto da ação" data-opcional>
+        <img src="" alt="Foto da ação social">
+        <div class="foto-vazia">
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="24" width="76" height="56" rx="10"/><circle cx="50" cy="52" r="15"/><path d="M36 24l6-9h16l6 9"/></svg>
+          <span>Foto da ação</span>
+          <small>clique aqui para escolher</small>
+        </div>
+      </div>
+      <div class="s-selo"><span data-estrela="anil"></span></div>
+    </div>
+
+    <div class="conteudo">
+      <!-- TROQUE AQUI: chamada -->
+      <p class="chamada s-chamada" data-editavel>Ação social</p>
+      <!-- TROQUE AQUI: título -->
+      <h1 class="titulo s-titulo" data-editavel data-ajustar=".6" data-altura-max="220">A promessa chega na rua</h1>
+      <!-- TROQUE AQUI: texto curto -->
+      <p class="texto s-texto" data-editavel data-ajustar=".75" data-altura-max="150">Toda sexta, depois do culto, levamos comida quente, roupa e escuta a quem está na rua.</p>
+
+      <p class="s-precisa" data-editavel>Precisamos de</p>
+      <div class="s-itens">
+        <!-- TROQUE AQUI: o que arrecadar (pode apagar ou copiar um <span>) -->
+        <span data-editavel>Agasalhos</span>
+        <span data-editavel>Alimentos não perecíveis</span>
+        <span data-editavel>Kits de higiene</span>
+      </div>
+
+      <div class="s-barra">
+        <div>
+          <!-- TROQUE AQUI: dia, horário e ponto de encontro -->
+          <p class="s-quando" data-editavel>Sexta, 17/10 · 21h30</p>
+          <p class="s-onde" data-editavel>Saída: Rua das Estrelas, 123</p>
+        </div>
+        <!-- TROQUE AQUI: convite -->
+        <p class="s-cta" data-editavel>Venha servir com a gente</p>
+      </div>
+
+      <div class="s-logo" data-logo="logo-horizontal" data-versao="colorido"></div>
+    </div>
+  </div>
+
+</main>
+<script src="assets/html-to-image.js"></script>
+<script src="assets/marca-dados.js"></script>
+<script src="assets/marca.js"></script>
+<script src="assets/editor.js"></script>
+</body>
+</html>

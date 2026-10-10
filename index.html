@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Promessa de Abraão — Identidade Visual</title>
+<link rel="icon" href="logo/simbolo-colorido.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&display=swap">
+<style>
+  :root {
+    --anil: #1E1D4A; --madrugada: #34327A; --ouro: #F4AD24; --urucum: #D1552E; --areia: #F7EEE2;
+    --texto: #1E1D4A; --suave: #5B5A7E; --linha: rgba(30, 29, 74, .12);
+    --titulo: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --corpo: 'Figtree', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--areia); color: var(--texto); font: 17px/1.6 var(--corpo); -webkit-font-smoothing: antialiased; }
+  img { max-width: 100%; display: block; }
+  a { color: var(--urucum); }
+  h1, h2, h3 { font-family: var(--titulo); font-variation-settings: 'SOFT' 100, 'WONK' 0; font-weight: 600; line-height: 1.05; margin: 0; text-wrap: balance; }
+  .wrap { width: min(1180px, 100% - 32px); margin: 0 auto; }
+  .chamada { font: 700 13px/1.2 var(--corpo); letter-spacing: .24em; text-transform: uppercase; color: var(--urucum); }
+  section { padding: 96px 0; }
+  section + section { border-top: 1px solid var(--linha); }
+  .sec-titulo { display: grid; gap: 12px; margin-bottom: 44px; max-width: 760px; }
+  .sec-titulo h2 { font-size: clamp(34px, 5vw, 54px); }
+  .sec-titulo p { margin: 0; color: var(--suave); font-size: 18px; }
+
+  /* ---------- Hero ---------- */
+  .hero { position: relative; overflow: hidden; color: var(--areia); background: radial-gradient(110% 80% at 80% 0%, var(--madrugada), var(--anil) 60%); padding: 72px 0 0; }
+  .hero .ceu { position: absolute; inset: 0; pointer-events: none; }
+  .hero .ceu svg { width: 100%; height: 100%; display: block; }
+  .hero-grade { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; padding-bottom: 96px; }
+  .hero .chamada { color: var(--ouro); }
+  .hero h1 { font-size: clamp(44px, 7vw, 86px); margin: 18px 0 22px; }
+  .hero h1 em { font-style: italic; font-weight: 500; color: var(--ouro); }
+  .hero p { color: rgba(247, 238, 226, .82); font-size: 19px; max-width: 560px; margin: 0; }
+  .hero-logo { justify-self: center; width: min(420px, 100%); }
+  .nav { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 34px; }
+  .nav a { color: var(--areia); text-decoration: none; border: 1px solid rgba(247, 238, 226, .3); border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 600; }
+  .nav a:hover { background: rgba(247, 238, 226, .1); }
+  .nav a.destaque { background: var(--ouro); color: var(--anil); border-color: var(--ouro); }
+  .horizonte { position: relative; height: 90px; margin-top: -90px; }
+  .horizonte svg { width: 100%; height: 100%; display: block; }
+
+  /* ---------- Direções ---------- */
+  .direcoes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .direcao { background: #fff; border-radius: 26px; overflow: hidden; border: 1px solid var(--linha); display: flex; flex-direction: column; }
+  .direcao.recomendada { border: 3px solid var(--ouro); box-shadow: 0 20px 50px rgba(30, 29, 74, .12); }
+  .direcao .arte-dir { aspect-ratio: 16 / 10; display: flex; align-items: center; justify-content: center; position: relative; }
+  .direcao .arte-dir svg { height: 72%; }
+  .direcao .info { padding: 24px 26px 28px; display: grid; gap: 10px; }
+  .direcao h3 { font-size: 28px; }
+  .direcao p { margin: 0; color: var(--suave); font-size: 15.5px; }
+  .direcao dl { margin: 6px 0 0; display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; font-size: 14.5px; }
+  .direcao dt { font-weight: 700; }
+  .direcao dd { margin: 0; color: var(--suave); }
+  .selo-rec { position: absolute; top: 14px; left: 14px; background: var(--ouro); color: var(--anil); font: 800 11px/1 var(--corpo); letter-spacing: .16em; text-transform: uppercase; padding: 8px 12px; border-radius: 999px; }
+  .cores-mini { display: flex; gap: 6px; margin-top: 4px; }
+  .cores-mini i { width: 22px; height: 22px; border-radius: 50%; border: 1px solid var(--linha); }
+
+  /* ---------- Significado ---------- */
+  .significado { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: center; }
+  .anatomia { position: relative; background: var(--anil); border-radius: 32px; padding: 56px; }
+  .anatomia img { width: 100%; }
+  .marcador { position: absolute; width: 34px; height: 34px; border-radius: 50%; background: var(--areia); color: var(--anil); font: 800 15px/34px var(--corpo); text-align: center; box-shadow: 0 6px 18px rgba(0, 0, 0, .3); }
+  .leitura { display: grid; gap: 22px; counter-reset: item; }
+  .leitura div { display: grid; grid-template-columns: 40px 1fr; gap: 14px; }
+  .leitura b.n { width: 34px; height: 34px; border-radius: 50%; background: var(--anil); color: var(--areia); display: grid; place-items: center; font-size: 15px; }
+  .leitura h3 { font-size: 23px; margin-bottom: 4px; }
+  .leitura p { margin: 0; color: var(--suave); font-size: 16px; }
+  .versiculo-ref { margin-top: 30px; padding: 24px 28px; border-left: 4px solid var(--ouro); background: #fff; border-radius: 0 18px 18px 0; font-family: var(--titulo); font-style: italic; font-size: 21px; line-height: 1.4; font-variation-settings: 'SOFT' 100; }
+  .versiculo-ref small { display: block; margin-top: 8px; font: 700 12px var(--corpo); letter-spacing: .2em; text-transform: uppercase; color: var(--urucum); font-style: normal; }
+
+  /* ---------- Logo ---------- */
+  .logos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .logo-cel { border-radius: 20px; padding: 26px; min-height: 220px; display: flex; flex-direction: column; justify-content: space-between; gap: 18px; border: 1px solid var(--linha); }
+  .logo-cel .img { flex: 1; display: flex; align-items: center; justify-content: center; }
+  .logo-cel .img img { max-height: 150px; width: auto; }
+  .logo-cel.larga { grid-column: span 2; }
+  .logo-cel .rot { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; }
+  .logo-cel .rot span { opacity: .8; }
+  .logo-cel .rot a { color: inherit; opacity: .9; font-weight: 700; text-decoration: none; border: 1px solid currentColor; border-radius: 999px; padding: 3px 10px; font-size: 12px; white-space: nowrap; }
+  .f-areia { background: var(--areia); color: var(--anil); }
+  .f-branco { background: #fff; color: #222; }
+  .f-anil { background: var(--anil); color: var(--areia); }
+  .f-urucum { background: var(--urucum); color: var(--areia); }
+  .f-foto { background: linear-gradient(135deg, #5a4a3e, #2b2a38 60%, #3d2a24); color: #fff; }
+  .grupo-logo { margin-top: 44px; }
+  .grupo-logo h3 { font-size: 26px; margin-bottom: 6px; }
+  .grupo-logo > p { margin: 0 0 18px; color: var(--suave); }
+
+  /* ---------- Paleta ---------- */
+  .paleta { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+  .cor { border-radius: 22px; overflow: hidden; background: #fff; border: 1px solid var(--linha); display: flex; flex-direction: column; }
+  .cor .amostra { height: 170px; padding: 18px; display: flex; align-items: flex-end; font-family: var(--titulo); font-size: 26px; font-variation-settings: 'SOFT' 100; font-weight: 600; }
+  .cor .dados { padding: 18px; display: grid; gap: 8px; font-size: 14px; }
+  .cor .hex { font: 800 18px/1 var(--corpo); letter-spacing: .04em; }
+  .cor .tec { color: var(--suave); font-size: 12.5px; line-height: 1.5; }
+  .cor .funcao { font-size: 14px; line-height: 1.45; }
+  .proporcao { display: flex; height: 26px; border-radius: 999px; overflow: hidden; margin-top: 26px; border: 1px solid var(--linha); }
+  .proporcao div { display: grid; place-items: center; font: 700 11px var(--corpo); letter-spacing: .1em; }
+  .combos { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-top: 26px; }
+  .combo { border-radius: 16px; padding: 18px; font-family: var(--titulo); font-size: 26px; font-weight: 600; font-variation-settings: 'SOFT' 100; line-height: 1.1; }
+  .combo small { display: block; margin-top: 8px; font: 600 12px/1.3 var(--corpo); letter-spacing: .04em; opacity: .85; }
+
+  /* ---------- Tipografia ---------- */
+  .tipos { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .tipo { background: #fff; border-radius: 26px; padding: 36px; border: 1px solid var(--linha); display: grid; gap: 14px; align-content: start; }
+  .tipo .nome { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .tipo .nome b { font: 800 13px var(--corpo); letter-spacing: .2em; text-transform: uppercase; color: var(--urucum); }
+  .tipo .nome a { font-size: 13px; }
+  .tipo .grande { font-size: clamp(64px, 9vw, 112px); line-height: .95; }
+  .tipo p { margin: 0; color: var(--suave); font-size: 15.5px; }
+  .tipo .alfabeto { color: var(--texto); font-size: 22px; line-height: 1.4; word-break: break-word; }
+  .f-fraunces { font-family: var(--titulo); font-variation-settings: 'SOFT' 100, 'WONK' 0; font-weight: 600; }
+  .f-figtree { font-family: var(--corpo); }
+  .hierarquia { margin-top: 22px; background: var(--anil); color: var(--areia); border-radius: 26px; padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
+  .hierarquia .ex .k { font: 700 14px var(--corpo); letter-spacing: .26em; text-transform: uppercase; color: var(--ouro); }
+  .hierarquia .ex h3 { font-size: 64px; margin: 10px 0 12px; }
+  .hierarquia .ex .s { font-family: var(--titulo); font-style: italic; font-size: 28px; color: var(--ouro); font-variation-settings: 'SOFT' 100; }
+  .hierarquia .ex p { margin: 12px 0 0; color: rgba(247, 238, 226, .82); }
+  .hierarquia table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .hierarquia td { padding: 9px 0; border-bottom: 1px solid rgba(247, 238, 226, .14); vertical-align: top; }
+  .hierarquia td:first-child { color: var(--ouro); font-weight: 700; width: 38%; padding-right: 12px; }
+
+  /* ---------- Elementos ---------- */
+  .elementos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .elemento { border-radius: 22px; overflow: hidden; background: #fff; border: 1px solid var(--linha); }
+  .elemento .vis { height: 210px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .elemento .vis .ceu { position: absolute; inset: 0; }
+  .elemento .vis .ceu svg { width: 100%; height: 100%; }
+  .elemento .txt { padding: 18px 20px 22px; }
+  .elemento h3 { font-size: 21px; margin-bottom: 6px; }
+  .elemento p { margin: 0; color: var(--suave); font-size: 14.5px; }
+  .arco-demo { width: 120px; height: 160px; border-radius: 999px 999px 14px 14px; background: var(--areia); position: relative; }
+  .arco-demo::before { content: ''; position: absolute; inset: 0; border: 3px solid var(--ouro); border-radius: inherit; transform: translate(10px, -10px); }
+  .regra-estrela { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 18px; width: 100%; height: 100%; }
+  .regra-estrela div { border-radius: 12px; background: var(--areia); position: relative; display: flex; align-items: flex-end; padding: 12px; font: 700 15px/1.05 var(--titulo); font-variation-settings: 'SOFT' 100; }
+  .regra-estrela span[data-estrela] { position: absolute; width: 26px; height: 26px; }
+
+  /* ---------- Aplicações ---------- */
+  .aplic-grupo { margin-top: 40px; }
+  .aplic-grupo:first-of-type { margin-top: 0; }
+  .aplic-grupo h3 { font-size: 26px; margin-bottom: 18px; }
+  .stories { display: flex; gap: 22px; overflow-x: auto; padding: 4px 4px 18px; scroll-snap-type: x mandatory; }
+  .peca { flex: none; scroll-snap-align: start; display: grid; gap: 10px; justify-items: start; }
+  .peca iframe { border: 0; border-radius: 18px; box-shadow: 0 18px 40px rgba(30, 29, 74, .18); background: var(--anil); display: block; }
+  .peca .story-frame { width: 243px; height: 432px; }
+  .peca .banner-frame { width: min(720px, calc(100vw - 32px)); aspect-ratio: 16 / 9; height: auto; }
+  .peca .quadrado-frame { width: 300px; height: 300px; }
+  .peca .capas-frame { width: min(520px, calc(100vw - 32px)); height: 360px; background: #16151F; }
+  .peca b { font-size: 15px; }
+  .peca .acoes { display: flex; gap: 8px; flex-wrap: wrap; }
+  .peca .acoes a { font-size: 13px; font-weight: 700; text-decoration: none; background: var(--anil); color: var(--areia); padding: 7px 14px; border-radius: 999px; }
+  .peca small { color: var(--suave); font-size: 13px; }
+  .linha-pecas { display: flex; gap: 22px; flex-wrap: wrap; align-items: flex-start; }
+
+  /* ---------- Rodapé ---------- */
+  .rodape { background: var(--anil); color: var(--areia); padding: 72px 0; }
+  .rodape-grade { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+  .rodape h3 { font-size: 24px; margin-bottom: 12px; }
+  .rodape p, .rodape li { color: rgba(247, 238, 226, .78); font-size: 15px; }
+  .rodape a { color: var(--ouro); }
+  .rodape ul { margin: 0; padding-left: 18px; }
+
+  @media (max-width: 980px) {
+    .hero-grade, .significado, .tipos, .hierarquia, .rodape-grade { grid-template-columns: 1fr; }
+    .direcoes { grid-template-columns: 1fr; }
+    .logos { grid-template-columns: repeat(2, 1fr); }
+    .paleta { grid-template-columns: repeat(2, 1fr); }
+    .elementos { grid-template-columns: repeat(2, 1fr); }
+    .hero-logo { width: min(300px, 80%); }
+  }
+  @media (max-width: 560px) {
+    section { padding: 64px 0; }
+    .logos, .paleta, .elementos { grid-template-columns: 1fr; }
+    .logo-cel.larga { grid-column: auto; }
+    .anatomia { padding: 32px; }
+    .hierarquia { padding: 26px; }
+    .hierarquia .ex h3 { font-size: 46px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================================================================
+     VISÃO GERAL DA IDENTIDADE VISUAL — A PROMESSA DE ABRAÃO
+     Abra este arquivo no navegador (de preferência o Chrome).
+     Para editar uma peça, clique em “Abrir e editar” na seção Aplicações.
+     ================================================================ -->
+
+<header class="hero">
+  <div class="ceu" data-estrelas="150" data-semente="9"></div>
+  <div class="wrap hero-grade">
+    <div>
+      <span class="chamada">Identidade visual · Direção “Tenda Aberta”</span>
+      <h1>Uma casa aberta debaixo de um <em>céu de promessas</em></h1>
+      <p>A marca da igreja A Promessa de Abraão: logo, cores, tipografia, manual e templates prontos para stories, banners e Instagram.</p>
+      <nav class="nav">
+        <a href="#conceito">Conceito</a>
+        <a href="#logo">Logo</a>
+        <a href="#paleta">Paleta</a>
+        <a href="#tipografia">Tipografia</a>
+        <a href="#elementos">Elementos</a>
+        <a href="#aplicacoes" class="destaque">Aplicações</a>
+        <a href="manual/manual-de-marca.html">Manual de marca ↗</a>
+      </nav>
+    </div>
+    <img class="hero-logo" src="logo/logo-vertical-fundo-escuro.svg" alt="Logo A Promessa de Abraão">
+  </div>
+  <div class="horizonte">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0 90 V52 C 360 0, 1080 0, 1440 52 V90 Z" fill="#F7EEE2"/></svg>
+  </div>
+</header>
+
+<main>
+
+<!-- ======================= CONCEITO ======================= -->
+<section id="conceito">
+  <div class="wrap">
+    <div class="sec-titulo">
+      <span class="chamada">01 · Direções de conceito</span>
+      <h2>Três caminhos, uma recomendação</h2>
+      <p>Todas partem de Gênesis 15:5: Deus leva Abraão para fora da tenda e diz “olha para o céu e conta as estrelas”. A estrela é a chave da marca: a promessa, a multidão e a esperança.</p>
+    </div>
+
+    <div class="direcoes">
+      <article class="direcao recomendada">
+        <div class="arte-dir f-anil">
+          <span class="selo-rec">★ Recomendada</span>
+          <img src="logo/simbolo-fundo-escuro.svg" alt="" style="height:62%">
+        </div>
+        <div class="info">
+          <h3>1. Tenda Aberta</h3>
+          <p>Uma tenda em forma de “A”, de porta aberta e luz acesa, com a estrela da promessa no céu, do lado de fora. Junta a promessa (Gn 15) com a hospitalidade de Abraão, que recebe estrangeiros na porta da tenda (Gn 18).</p>
+          <dl><dt>Símbolo</dt><dd>Tenda “A” + porta acesa + estrela</dd><dt>Clima</dt><dd>Noite quente do interior: anil, ouro, urucum, areia</dd></dl>
+          <div class="cores-mini"><i style="background:#1E1D4A"></i><i style="background:#34327A"></i><i style="background:#F4AD24"></i><i style="background:#D1552E"></i><i style="background:#F7EEE2"></i></div>
+        </div>
+      </article>
+
+      <article class="direcao">
+        <div class="arte-dir" style="background:linear-gradient(180deg,#141336 0%,#3B2D6E 55%,#E8875F 100%)">
+          <svg viewBox="0 0 200 200" aria-hidden="true">
+            <g fill="none" stroke="#F7EEE2" stroke-linecap="round">
+              <path d="M100 12 L114 86 L188 100 L114 114 L100 188 L86 114 L12 100 L86 86 Z" stroke-width="7" stroke-dasharray="0 13"/>
+              <path d="M100 42 L110 90 L158 100 L110 110 L100 158 L90 110 L42 100 L90 90 Z" stroke-width="5.5" stroke-dasharray="0 11" opacity=".85"/>
+              <path d="M100 70 L106 94 L130 100 L106 106 L100 130 L94 106 L70 100 L94 94 Z" stroke-width="4" stroke-dasharray="0 9" opacity=".7"/>
+            </g>
+            <circle cx="100" cy="100" r="7" fill="#F4AD24"/>
+          </svg>
+        </div>
+        <div class="info">
+          <h3>2. Céu Contável</h3>
+          <p>Uma estrela grande formada por muitos pontos de luz de tamanhos diferentes: cada ponto é uma pessoa da multidão prometida. Mais abstrata e contemporânea.</p>
+          <dl><dt>Símbolo</dt><dd>Estrela de pontos (constelação)</dd><dt>Clima</dt><dd>Degradê da noite ao amanhecer</dd></dl>
+          <div class="cores-mini"><i style="background:#141336"></i><i style="background:#3B2D6E"></i><i style="background:#E8875F"></i><i style="background:#F7EEE2"></i></div>
+          <p><b>Risco:</b> os pontos somem em tamanho pequeno e o degradê encarece a impressão.</p>
+        </div>
+      </article>
+
+      <article class="direcao">
+        <div class="arte-dir" style="background:#D9BE93">
+          <svg viewBox="0 0 200 200" aria-hidden="true">
+            <polygon points="100.0,12.0 119.1,53.8 162.2,37.8 146.2,80.9 188.0,100.0 146.2,119.1 162.2,162.2 119.1,146.2 100.0,188.0 80.9,146.2 37.8,162.2 53.8,119.1 12.0,100.0 53.8,80.9 37.8,37.8 80.9,53.8" fill="#1B1714"/>
+            <polygon points="100.0,42.0 112.6,69.5 141.0,59.0 130.5,87.4 158.0,100.0 130.5,112.6 141.0,141.0 112.6,130.5 100.0,158.0 87.4,130.5 59.0,141.0 69.5,112.6 42.0,100.0 69.5,87.4 59.0,59.0 87.4,69.5" fill="#C8432B"/>
+            <g stroke="#D9BE93" stroke-width="3.5" stroke-linecap="round"><path d="M100 22 V36 M100 164 V178 M22 100 H36 M164 100 H178 M45 45 L54 54 M155 45 L146 54 M45 155 L54 146 M155 155 L146 146"/></g>
+            <circle cx="100" cy="100" r="14" fill="#F4AD24"/>
+          </svg>
+        </div>
+        <div class="info">
+          <h3>3. Estrela de Cordel</h3>
+          <p>Uma estrela de 8 pontas com traço de xilogravura e letras de letreiro pintado à mão, a linguagem popular do Nordeste. Forte na rua e muito brasileira.</p>
+          <dl><dt>Símbolo</dt><dd>Estrela entalhada em xilogravura</dd><dt>Clima</dt><dd>Papel kraft, preto, vermelho e amarelo</dd></dl>
+          <div class="cores-mini"><i style="background:#D9BE93"></i><i style="background:#1B1714"></i><i style="background:#C8432B"></i><i style="background:#F4AD24"></i></div>
+          <p><b>Risco:</b> pode soar rústica e regional, e funciona menos bem em telas.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="significado" style="margin-top:80px">
+      <div class="anatomia">
+        <img src="logo/simbolo-fundo-escuro.svg" alt="Símbolo da marca">
+        <span class="marcador" style="left:20%;top:78%">1</span>
+        <span class="marcador" style="left:41%;top:62%">2</span>
+        <span class="marcador" style="left:82%;top:10%">3</span>
+        <span class="marcador" style="left:30%;top:30%">4</span>
+      </div>
+      <div>
+        <div class="sec-titulo" style="margin-bottom:26px">
+          <span class="chamada">Por que a Tenda Aberta</span>
+          <h2>Cada parte do símbolo conta a história</h2>
+        </div>
+        <div class="leitura">
+          <div><b class="n">1</b><span><h3>A tenda</h3><p>A casa de Abraão, peregrino. Em Gênesis 18 ele recebe três estrangeiros na porta da tenda. A tenda é a igreja acolhedora: casa simples, aberta para quem chega.</p></span></div>
+          <div><b class="n">2</b><span><h3>A porta acesa</h3><p>A porta está aberta e a luz, acesa (urucum, cor de fogo e de terra). É o recado para quem está na rua: tem lugar pra você aqui.</p></span></div>
+          <div><b class="n">3</b><span><h3>A estrela da promessa</h3><p>Fica <i>fora</i> da tenda, no céu, porque Deus “levou Abraão para fora” para ver as estrelas, como a igreja que sai para a rua. Os quatro raios principais desenham, com sobriedade, uma cruz.</p></span></div>
+          <div><b class="n">4</b><span><h3>O “A”</h3><p>A tenda tem a forma da letra A: de <b>A</b> Promessa e de <b>A</b>braão. Funciona como monograma e como ícone de perfil.</p></span></div>
+        </div>
+        <div class="versiculo-ref">“Olha agora para os céus e conta as estrelas, se as podes contar. […] Assim será a tua descendência.”<small>Gênesis 15:5</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= LOGO ======================= -->
+<section id="logo">
+  <div class="wrap">
+    <div class="sec-titulo">
+      <span class="chamada">02 · Logo</span>
+      <h2>Versões e variações</h2>
+      <p>Todos os arquivos estão na pasta <code>/logo</code>, em SVG (vetor, para gráfica) e em PNG com fundo transparente (<code>/logo/png</code>, para celular, Canva e WhatsApp). O texto já está convertido em curvas: abre igual em qualquer programa.</p>
+    </div>
+
+    <div class="grupo-logo">
+      <h3>Principal (vertical)</h3>
+      <p>Uso preferencial: capas, cartazes, banners verticais, camisetas.</p>
+      <div class="logos">
+        <div class="logo-cel f-areia"><div class="img"><img src="logo/logo-vertical-colorido.svg" alt="Logo vertical colorido"></div><div class="rot"><span>Colorida</span><a href="logo/logo-vertical-colorido.svg" download>SVG</a></div></div>
+        <div class="logo-cel f-anil"><div class="img"><img src="logo/logo-vertical-fundo-escuro.svg" alt="Logo vertical fundo escuro"></div><div class="rot"><span>Fundo escuro</span><a href="logo/logo-vertical-fundo-escuro.svg" download>SVG</a></div></div>
+        <div class="logo-cel f-branco"><div class="img"><img src="logo/logo-vertical-preto.svg" alt="Logo vertical preto"></div><div class="rot"><span>Monocromática preta</span><a href="logo/logo-vertical-preto.svg" download>SVG</a></div></div>
+        <div class="logo-cel f-foto"><div class="img"><img src="logo/logo-vertical-branco.svg" alt="Logo vertical branco"></div><div class="rot"><span>Negativa branca</span><a href="logo/logo-vertical-branco.svg" download>SVG</a></div></div>
+      </div>
+    </div>
+
+    <div class="grupo-logo">
+      <h3>Horizontal</h3>
+      <p>Para assinaturas, rodapés de posts, banners largos e fachada.</p>
+      <div class="logos">
+        <div class="logo-cel larga f-areia"><div class="img"><img src="logo/logo-horizontal-colorido.svg" alt="Logo horizontal colorido" style="max-height:110px"></div><div class="rot"><span>Colorida</span><a href="logo/logo-horizontal-colorido.svg" download>SVG</a></div></div>
+        <div class="logo-cel larga f-anil"><div class="img"><img src="logo/logo-horizontal-fundo-escuro.svg" alt="Logo horizontal fundo escuro" style="max-height:110px"></div><div class="rot"><span>Fundo escuro (céu noturno)</span><a href="logo/logo-horizontal-fundo-escuro.svg" download>SVG</a></div></div>
+        <div class="logo-cel larga f-branco"><div class="img"><img src="logo/logo-horizontal-preto.svg" alt="Logo horizontal preto" style="max-height:110px"></div><div class="rot"><span>Monocromática preta</span><a href="logo/logo-horizontal-preto.svg" download>SVG</a></div></div>
+        <div class="logo-cel larga f-urucum"><div class="img"><img src="logo/logo-horizontal-fundo-urucum.svg" alt="Logo horizontal fundo urucum" style="max-height:110px"></div><div class="rot"><span>Extra: sobre Urucum</span><a href="logo/logo-horizontal-fundo-urucum.svg" download>SVG</a></div></div>
+      </div>
+    </div>
+
+    <div class="grupo-logo">
+      <h3>Símbolo isolado e perfil</h3>
+      <p>O ícone sozinho: foto de perfil, favicon, carimbo, selo, bordado. Legível a partir de 16 px.</p>
+      <div class="logos">
+        <div class="logo-cel f-areia"><div class="img"><img src="logo/simbolo-colorido.svg" alt="Símbolo colorido" style="max-height:120px"></div><div class="rot"><span>Colorido</span><a href="logo/simbolo-colorido.svg" download>SVG</a></div></div>
+        <div class="logo-cel f-anil"><div class="img"><img src="logo/simbolo-fundo-escuro.svg" alt="Símbolo fundo escuro" style="max-height:120px"></div><div class="rot"><span>Fundo escuro</span><a href="logo/simbolo-fundo-escuro.svg" download>SVG</a></div></div>
+        <div class="logo-cel f-branco"><div class="img"><img src="logo/simbolo-preto.svg" alt="Símbolo preto" style="max-height:120px"></div><div class="rot"><span>Preto</span><a href="logo/simbolo-preto.svg" download>SVG</a></div></div>
+        <div class="logo-cel f-urucum"><div class="img"><img src="logo/simbolo-branco.svg" alt="Símbolo branco" style="max-height:120px"></div><div class="rot"><span>Branco</span><a href="logo/simbolo-branco.svg" download>SVG</a></div></div>
+        <div class="logo-cel f-branco"><div class="img"><img src="logo/perfil-instagram.svg" alt="Perfil Instagram" style="max-height:150px;border-radius:50%"></div><div class="rot"><span>Perfil do Instagram</span><a href="logo/png/perfil-instagram.png" download>PNG</a></div></div>
+        <div class="logo-cel f-branco"><div class="img"><img src="logo/perfil-instagram-claro.svg" alt="Perfil Instagram claro" style="max-height:150px;border-radius:50%"></div><div class="rot"><span>Perfil (alternativa clara)</span><a href="logo/png/perfil-instagram-claro.png" download>PNG</a></div></div>
+        <div class="logo-cel f-areia" style="grid-column:span 2"><div class="img" style="gap:22px;align-items:flex-end">
+          <img src="logo/simbolo-colorido.svg" alt="" style="height:96px"><img src="logo/simbolo-colorido.svg" alt="" style="height:48px"><img src="logo/simbolo-colorido.svg" alt="" style="height:32px"><img src="logo/simbolo-colorido.svg" alt="" style="height:20px"><img src="logo/simbolo-colorido.svg" alt="" style="height:16px">
+        </div><div class="rot"><span>Teste de redução: 96 · 48 · 32 · 20 · 16 px</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PALETA ======================= -->
+<section id="paleta">
+  <div class="wrap">
+    <div class="sec-titulo">
+      <span class="chamada">03 · Paleta</span>
+      <h2>O céu da noite e o calor da casa</h2>
+      <p>Anil e Madrugada são o céu. Ouro é a estrela. Urucum é a luz da porta: o pigmento brasileiro, cor de terra e de fogo, que deixa tudo caloroso. Areia substitui o branco para que nada pareça frio ou corporativo.</p>
+    </div>
+    <div class="paleta">
+      <div class="cor"><div class="amostra" style="background:#1E1D4A;color:#F7EEE2">Anil</div><div class="dados"><span class="hex">#1E1D4A</span><span class="tec">RGB 30 29 74<br>CMYK ≈ 90 88 30 40</span><span class="funcao"><b>Céu noturno.</b> Fundo principal escuro e cor dos textos sobre fundo claro. É a cor dominante.</span></div></div>
+      <div class="cor"><div class="amostra" style="background:#34327A;color:#F7EEE2">Madrugada</div><div class="dados"><span class="hex">#34327A</span><span class="tec">RGB 52 50 122<br>CMYK ≈ 88 85 10 5</span><span class="funcao"><b>Apoio do céu.</b> Degradês, painéis e camadas sobre o Anil. Nunca para texto miúdo.</span></div></div>
+      <div class="cor"><div class="amostra" style="background:#F4AD24;color:#1E1D4A">Ouro</div><div class="dados"><span class="hex">#F4AD24</span><span class="tec">RGB 244 173 36<br>CMYK ≈ 0 35 90 0</span><span class="funcao"><b>A estrela da promessa.</b> Destaques, horários, chamadas e botões. Brilha sobre fundos escuros.</span></div></div>
+      <div class="cor"><div class="amostra" style="background:#D1552E;color:#F7EEE2">Urucum</div><div class="dados"><span class="hex">#D1552E</span><span class="tec">RGB 209 85 46<br>CMYK ≈ 10 78 88 2</span><span class="funcao"><b>Calor e acolhimento.</b> A porta acesa, as ações sociais, o culto de sexta. Com texto, só em tamanhos grandes.</span></div></div>
+      <div class="cor"><div class="amostra" style="background:#F7EEE2;color:#1E1D4A;box-shadow:inset 0 -1px 0 rgba(30,29,74,.1)">Areia</div><div class="dados"><span class="hex">#F7EEE2</span><span class="tec">RGB 247 238 226<br>CMYK ≈ 2 5 11 0</span><span class="funcao"><b>Papel, luz do dia.</b> Fundo claro e texto sobre fundos escuros, no lugar do branco puro.</span></div></div>
+    </div>
+    <div class="proporcao" title="Proporção de uso sugerida">
+      <div style="flex:40;background:#1E1D4A;color:#F7EEE2">ANIL 40%</div>
+      <div style="flex:25;background:#F7EEE2;color:#1E1D4A">AREIA 25%</div>
+      <div style="flex:15;background:#34327A;color:#F7EEE2">15%</div>
+      <div style="flex:12;background:#D1552E;color:#F7EEE2">12%</div>
+      <div style="flex:8;background:#F4AD24;color:#1E1D4A">8%</div>
+    </div>
+    <div class="combos">
+      <div class="combo" style="background:#1E1D4A;color:#F7EEE2">Areia sobre Anil<small>Contraste 13,7 : 1 · qualquer tamanho</small></div>
+      <div class="combo" style="background:#1E1D4A;color:#F4AD24">Ouro sobre Anil<small>8,2 : 1 · qualquer tamanho</small></div>
+      <div class="combo" style="background:#F7EEE2;color:#1E1D4A;border:1px solid rgba(30,29,74,.12)">Anil sobre Areia<small>13,7 : 1 · qualquer tamanho</small></div>
+      <div class="combo" style="background:#D1552E;color:#F7EEE2">Areia sobre Urucum<small>3,6 : 1 · só títulos e chamadas grandes</small></div>
+      <div class="combo" style="background:#F4AD24;color:#1E1D4A">Anil sobre Ouro<small>8,2 : 1 · botões e selos</small></div>
+    </div>
+    <p style="color:var(--suave);font-size:14px;margin-top:16px">CMYK aproximado: para impressão, peça uma prova de cor à gráfica. Evite Ouro como texto sobre Areia ou branco (contraste baixo).</p>
+  </div>
+</section>
+
+<!-- ======================= TIPOGRAFIA ======================= -->
+<section id="tipografia">
+  <div class="wrap">
+    <div class="sec-titulo">
+      <span class="chamada">04 · Tipografia</span>
+      <h2>Uma serifa macia e uma sem serifa amiga</h2>
+      <p>As duas são gratuitas no Google Fonts e têm acentuação completa do português: á, â, ã, à, ç, é, ê, í, ó, ô, õ, ú.</p>
+    </div>
+    <div class="tipos">
+      <div class="tipo">
+        <div class="nome"><b>Títulos</b><a href="https://fonts.google.com/specimen/Fraunces" target="_blank" rel="noopener">Fraunces no Google Fonts ↗</a></div>
+        <div class="grande f-fraunces">Fraunces</div>
+        <div class="alfabeto f-fraunces">Ação, coração, oração · Abraão<br><i style="font-weight:500">Promessa, estrela, irmão</i></div>
+        <p>Serifa de inspiração antiga, com o eixo <b>“Soft”</b> no máximo: os cantos ficam arredondados, quentes e humanos. Tem o peso de uma tradição sem soar antiga, e o itálico é expressivo para frases e versículos. É do estúdio Undercase Type, que tem uma das fundadoras brasileira, Flavia Zimbardi.</p>
+        <p><b>Uso:</b> títulos, nomes, dias da semana, versículos (itálico). Pesos 500–600.</p>
+      </div>
+      <div class="tipo">
+        <div class="nome"><b>Textos</b><a href="https://fonts.google.com/specimen/Figtree" target="_blank" rel="noopener">Figtree no Google Fonts ↗</a></div>
+        <div class="grande f-figtree" style="font-weight:600">Figtree</div>
+        <div class="alfabeto f-figtree">Culto de terça às 19h30 · Rua das Estrelas, 123<br><b>Venha servir com a gente</b></div>
+        <p>Sem serifa geométrica e amigável: clara em tela pequena e em placa de rua, sem a frieza das fontes corporativas. Combina com as curvas da Fraunces e tem pesos do 300 ao 900.</p>
+        <p><b>Uso:</b> textos, horários, endereços, chamadas em CAIXA ALTA espaçada. Pesos 400, 600 e 700.</p>
+      </div>
+    </div>
+    <div class="hierarquia">
+      <div class="ex">
+        <div class="k">Culto de</div>
+        <h3>Terça-feira</h3>
+        <div class="s">com Pr. Nome do Pregador</div>
+        <p>Toda terça, 19h30, na Rua das Estrelas, 123. Tem lugar pra você.</p>
+      </div>
+      <table>
+        <tr><td>Chamada</td><td>Figtree 700, CAIXA ALTA, espaçamento 0,28 em</td></tr>
+        <tr><td>Título</td><td>Fraunces 600, Soft 100</td></tr>
+        <tr><td>Destaque / frase</td><td>Fraunces Itálico 500</td></tr>
+        <tr><td>Texto</td><td>Figtree 400, entrelinha 1,35–1,6</td></tr>
+        <tr><td>Alternativas sem internet</td><td>Georgia (títulos) · Segoe UI / Arial (textos)</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= ELEMENTOS ======================= -->
+<section id="elementos">
+  <div class="wrap">
+    <div class="sec-titulo">
+      <span class="chamada">05 · Elementos gráficos</span>
+      <h2>O que dá cara à marca, além do logo</h2>
+    </div>
+    <div class="elementos">
+      <div class="elemento"><div class="vis" style="background:#1E1D4A"><div class="ceu" data-estrelas="70" data-semente="3"></div></div><div class="txt"><h3>Céu contável</h3><p>Muitos pontos de luz de tamanhos diferentes: a multidão da promessa. Fundo das peças noturnas.</p></div></div>
+      <div class="elemento"><div class="vis" style="background-color:#34327A" data-cobogo="#F7EEE2" data-cobogo-opacidade=".16" data-cobogo-tamanho="70"></div><div class="txt"><h3>Cobogó de estrelas</h3><p>O tijolo vazado do modernismo brasileiro, desenhado com a estrela da marca. Textura para faixas e painéis.</p></div></div>
+      <div class="elemento"><div class="vis" style="background:#1E1D4A"><div class="arco-demo"></div></div><div class="txt"><h3>Arco-porta</h3><p>A porta da tenda vira moldura de foto, com um contorno dourado deslocado. Sempre para rostos de pregadores e convidados.</p></div></div>
+      <div class="elemento"><div class="vis" style="background:#fff"><div class="regra-estrela">
+        <div>Título<span data-estrela="ouro" style="right:8px;top:8px"></span></div>
+        <div style="background:#1E1D4A;color:#F7EEE2">Título<span data-estrela="ouro" style="right:8px;top:8px"></span></div>
+      </div></div><div class="txt"><h3>A estrela no alto, à direita</h3><p>Como no logo, a estrela solta aparece no canto superior direito do título ou da foto. Uma por peça.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= APLICAÇÕES ======================= -->
+<section id="aplicacoes">
+  <div class="wrap">
+    <div class="sec-titulo">
+      <span class="chamada">06 · Aplicações</span>
+      <h2>Templates prontos para editar</h2>
+      <p>Clique em <b>Abrir e editar</b>. Lá você clica nos textos para trocar, clica na área tracejada para escolher a foto e baixa a imagem no tamanho certo com o botão <b>Baixar PNG</b>. Passo a passo no <a href="README.md">README</a>.</p>
+    </div>
+
+    <div class="aplic-grupo">
+      <h3>Stories (1080 × 1920)</h3>
+      <div class="stories">
+        <div class="peca"><iframe class="story-frame" src="templates/story-culto-terca.html?preview" title="Story culto de terça"></iframe><b>Culto de terça</b><small>Com foto do pregador</small><div class="acoes"><a href="templates/story-culto-terca.html">Abrir e editar →</a></div></div>
+        <div class="peca"><iframe class="story-frame" src="templates/story-culto-sexta.html?preview" title="Story culto de sexta"></iframe><b>Culto de sexta</b><small>Com foto do pregador</small><div class="acoes"><a href="templates/story-culto-sexta.html">Abrir e editar →</a></div></div>
+        <div class="peca"><iframe class="story-frame" src="templates/story-versiculo.html?preview" title="Story versículo"></iframe><b>Versículo</b><small>Texto se ajusta sozinho</small><div class="acoes"><a href="templates/story-versiculo.html">Abrir e editar →</a></div></div>
+        <div class="peca"><iframe class="story-frame" src="templates/story-aviso.html?preview" title="Story aviso"></iframe><b>Avisos</b><small>Título, texto e informações</small><div class="acoes"><a href="templates/story-aviso.html">Abrir e editar →</a></div></div>
+        <div class="peca"><iframe class="story-frame" src="templates/story-acao-social.html?preview" title="Story ação social"></iframe><b>Ação social na rua</b><small>Com ou sem foto</small><div class="acoes"><a href="templates/story-acao-social.html">Abrir e editar →</a></div></div>
+      </div>
+    </div>
+
+    <div class="aplic-grupo">
+      <h3>Banner de eventos (1920 × 1080)</h3>
+      <div class="peca"><iframe class="banner-frame" src="templates/banner-evento.html?preview" title="Banner de evento"></iframe><b>Banner horizontal</b><small>Telão, YouTube, Facebook. Para gráfica, use “Salvar PDF”, que sai em vetor.</small><div class="acoes"><a href="templates/banner-evento.html">Abrir e editar →</a></div></div>
+    </div>
+
+    <div class="aplic-grupo">
+      <h3>Instagram: perfil e capas de destaque</h3>
+      <div class="linha-pecas">
+        <div class="peca"><iframe class="quadrado-frame" src="templates/perfil-instagram.html?preview" title="Imagem de perfil" style="border-radius:50%"></iframe><b>Imagem de perfil</b><small>1080 × 1080 · 3 cores de fundo</small><div class="acoes"><a href="templates/perfil-instagram.html">Abrir →</a></div></div>
+        <div class="peca"><iframe class="capas-frame" src="templates/capas-destaque.html?preview" title="Capas de destaque"></iframe><b>Capas de destaque</b><small>Cultos · Ação social · Versículos · Avisos · Agenda · Oração</small><div class="acoes"><a href="templates/capas-destaque.html">Abrir e baixar →</a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <div class="wrap rodape-grade">
+    <div>
+      <img src="logo/logo-horizontal-fundo-escuro.svg" alt="A Promessa de Abraão" style="height:64px;width:auto;margin-bottom:18px">
+      <p>Identidade visual · direção “Tenda Aberta”.</p>
+    </div>
+    <div>
+      <h3>Documentos</h3>
+      <ul>
+        <li><a href="manual/manual-de-marca.html">Manual de marca (1 página)</a></li>
+        <li><a href="README.md">README: como editar e exportar</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Pastas</h3>
+      <ul>
+        <li><b>/logo</b>: SVG e PNG de todas as versões</li>
+        <li><b>/templates</b>: stories, banner, perfil e destaques</li>
+        <li><b>/manual</b>: o manual de marca</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="templates/assets/marca-dados.js"></script>
+<script src="templates/assets/marca.js"></script>
+</body>
+</html>

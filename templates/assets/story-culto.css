@@ -1,0 +1,47 @@
+/* Layout dos stories de culto (terça e sexta usam o mesmo desenho, com cores diferentes) */
+
+.culto {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 250px 70px 250px;      /* 250px em cima e embaixo = áreas cobertas pelo Instagram */
+  text-align: center;
+}
+.culto > * { position: relative; z-index: 2; }
+.culto .ceu { position: absolute; z-index: 0; }
+
+/* luz quente saindo “da porta da tenda”, embaixo */
+.culto::after {
+  content: ''; position: absolute; z-index: 1; left: -10%; right: -10%; bottom: -380px; height: 900px;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(209, 85, 46, .55), rgba(209, 85, 46, 0) 70%);
+  pointer-events: none;
+}
+.culto .cobogo-base { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; height: 200px; }
+
+.culto-chamada { color: var(--ouro); margin-top: 6px; }
+.culto-titulo { display: flex; justify-content: center; align-items: flex-start; margin-top: 4px; }
+.culto-dia { font-size: 230px; line-height: .92; }
+.culto-titulo [data-estrela] { width: 104px; height: 104px; margin: -26px -58px 0 4px; flex: none; }
+
+/* Área da foto: arco (porta da tenda) + contorno dourado deslocado */
+.culto-foto-area { position: relative; width: 620px; flex: 0 1 690px; min-height: 480px; margin-top: 60px; }
+.culto-foto-area .contorno { position: absolute; inset: 0; transform: translate(26px, -26px); border: 5px solid var(--ouro); }
+.culto-foto-area .foto { position: absolute; inset: 0; box-shadow: 0 30px 60px rgba(0,0,0,.25); }
+
+.culto-nome { font-size: 80px; line-height: 1.02; margin-top: 54px; width: 100%; }
+.culto-origem { font-size: 32px; margin-top: 12px; opacity: .82; width: 100%; }
+
+.culto-info { display: flex; align-items: center; justify-content: center; gap: 30px; margin-top: 38px; text-align: left; }
+.culto-hora { font-size: 104px; color: var(--ouro); line-height: 1; white-space: nowrap; }
+.culto-sep { width: 4px; align-self: stretch; background: currentColor; opacity: .35; border-radius: 2px; }
+.culto-data { font: 700 34px/1.2 var(--fonte-texto); }
+.culto-local { font: 400 30px/1.25 var(--fonte-texto); opacity: .82; margin-top: 4px; }
+
+.culto-logo { height: 74px; margin-top: auto; padding-top: 36px; box-sizing: content-box; }
+.culto-logo svg { width: auto; height: 74px; }
+
+/* ---------- SEXTA (tema fogo / urucum) ---------- */
+.tema-fogo.culto::after { background: radial-gradient(50% 50% at 50% 50%, rgba(244, 173, 36, .45), rgba(244, 173, 36, 0) 70%); }
+.tema-fogo .culto-chamada { color: var(--anil); }
+.tema-fogo .culto-hora { color: var(--anil); }
+.tema-fogo .culto-foto-area .contorno { border-color: var(--anil); }
+.tema-fogo .foto { background: rgba(30, 29, 74, .14); }
+.tema-fogo .foto-vazia { border-color: rgba(247, 238, 226, .7); color: var(--areia); }

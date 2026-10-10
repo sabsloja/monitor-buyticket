@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manual de Marca — A Promessa de Abraão</title>
+<link rel="icon" href="../logo/simbolo-colorido.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&display=swap">
+<style>
+  :root {
+    --anil: #1E1D4A; --madrugada: #34327A; --ouro: #F4AD24; --urucum: #D1552E; --areia: #F7EEE2;
+    --suave: #5B5A7E; --linha: rgba(30, 29, 74, .14);
+    --titulo: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --corpo: 'Figtree', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #E9E1D4; color: var(--anil); font: 14px/1.5 var(--corpo); -webkit-font-smoothing: antialiased; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  h1, h2, h3 { font-family: var(--titulo); font-variation-settings: 'SOFT' 100, 'WONK' 0; font-weight: 600; margin: 0; line-height: 1.05; }
+  p { margin: 0; }
+  img { display: block; max-width: 100%; }
+
+  .folha { width: min(1240px, 100%); margin: 24px auto; background: var(--areia); border-radius: 18px; overflow: hidden; box-shadow: 0 20px 60px rgba(30, 29, 74, .18); }
+
+  .topo { background: var(--anil); color: var(--areia); display: grid; grid-template-columns: auto 1fr auto; gap: 32px; align-items: center; padding: 34px 44px; position: relative; overflow: hidden; }
+  .topo img { height: 92px; width: auto; }
+  .topo h1 { font-size: 46px; }
+  .topo h1 i { font-weight: 500; color: var(--ouro); }
+  .topo .meta { text-align: right; font-size: 12.5px; color: rgba(247, 238, 226, .75); line-height: 1.6; }
+  .topo .meta b { color: var(--ouro); letter-spacing: .18em; text-transform: uppercase; font-size: 11px; }
+
+  .grade { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; padding: 28px 44px 40px; }
+  .bloco { background: #fff; border-radius: 16px; padding: 22px 24px; border: 1px solid var(--linha); }
+  .bloco h2 { font-size: 22px; display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; }
+  .bloco h2 span { font: 800 11px var(--corpo); letter-spacing: .18em; color: var(--urucum); }
+  .bloco p, .bloco li { color: var(--suave); font-size: 13.5px; }
+  .bloco ul { margin: 0; padding-left: 18px; }
+  .bloco li { margin-bottom: 4px; }
+  .c4 { grid-column: span 4; } .c5 { grid-column: span 5; } .c6 { grid-column: span 6; } .c7 { grid-column: span 7; } .c8 { grid-column: span 8; } .c12 { grid-column: span 12; } .c3 { grid-column: span 3; }
+
+  /* Significado */
+  .significado { display: grid; grid-template-columns: 150px 1fr; gap: 20px; align-items: center; }
+  .significado .simb { background: var(--anil); border-radius: 14px; padding: 22px; }
+  .significado ol { margin: 0; padding-left: 18px; }
+  .significado li b { color: var(--anil); }
+
+  /* Versões */
+  .versoes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 4px; }
+  .versoes div { border-radius: 10px; height: 92px; display: flex; align-items: center; justify-content: center; padding: 12px; border: 1px solid var(--linha); }
+  .versoes img { max-height: 64px; width: auto; }
+  .versoes small { display: block; }
+  .legenda { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 6px; font-size: 11.5px; color: var(--suave); text-align: center; }
+  .layouts { display: grid; grid-template-columns: 1.1fr 1.5fr .7fr; gap: 8px; margin-top: 12px; }
+  .layouts div { background: var(--areia); border-radius: 10px; padding: 12px; display: grid; gap: 8px; justify-items: center; align-content: center; font-size: 11.5px; color: var(--suave); text-align: center; }
+  .layouts img { max-height: 70px; width: auto; }
+
+  /* Área de proteção */
+  .protecao { display: flex; justify-content: center; padding: 6px 0 4px; }
+  .protecao svg { width: 100%; max-width: 360px; height: auto; }
+
+  /* Tamanho mínimo */
+  .minimos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; align-items: end; text-align: center; margin-top: 4px; }
+  .minimos div { display: grid; gap: 8px; justify-items: center; }
+  .minimos b { font-size: 13px; }
+  .minimos small { color: var(--suave); font-size: 11.5px; line-height: 1.4; }
+
+  /* Usos incorretos */
+  .erros { display: grid; grid-template-columns: repeat(8, 1fr); gap: 10px; }
+  .erro { display: grid; gap: 8px; }
+  .erro .caixa { position: relative; height: 104px; border-radius: 10px; background: var(--areia); display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--linha); }
+  .erro .caixa img { height: 64px; width: auto; }
+  .erro .caixa::after { content: '×'; position: absolute; top: 6px; right: 6px; width: 22px; height: 22px; border-radius: 50%; background: #C8352B; color: #fff; font: 800 17px/22px var(--corpo); text-align: center; }
+  .erro p { font-size: 12px; line-height: 1.35; color: var(--anil); }
+  .certos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 14px; }
+  .certo .caixa { position: relative; height: 84px; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+  .certo .caixa img { height: 48px; width: auto; }
+  .certo .caixa::after { content: '✓'; position: absolute; top: 6px; right: 6px; width: 22px; height: 22px; border-radius: 50%; background: #2F8A57; color: #fff; font: 800 13px/22px var(--corpo); text-align: center; }
+  .certo p { font-size: 12px; color: var(--anil); margin-top: 6px; }
+
+  /* Paleta */
+  .cores { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+  .cor .amostra { height: 64px; border-radius: 10px 10px 0 0; display: flex; align-items: flex-end; padding: 8px 10px; font: 600 16px var(--titulo); font-variation-settings: 'SOFT' 100; }
+  .cor .dados { background: var(--areia); border-radius: 0 0 10px 10px; padding: 8px 10px; font-size: 11px; line-height: 1.45; color: var(--suave); }
+  .cor .dados b { display: block; color: var(--anil); font-size: 13px; letter-spacing: .03em; }
+  .cor .dados i { display: block; font-style: normal; color: var(--anil); margin-top: 4px; }
+
+  /* Tipografia */
+  .fontes { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .fonte .amostra { font-size: 50px; line-height: 1; margin-bottom: 6px; }
+  .fonte .acentos { font-size: 17px; color: var(--anil); margin-bottom: 6px; }
+  .fraunces { font-family: var(--titulo); font-variation-settings: 'SOFT' 100, 'WONK' 0; font-weight: 600; }
+  .figtree { font-family: var(--corpo); }
+  .hier { margin-top: 12px; display: grid; gap: 4px; background: var(--anil); color: var(--areia); border-radius: 12px; padding: 14px 16px; }
+  .hier .k { font: 700 11px var(--corpo); letter-spacing: .26em; text-transform: uppercase; color: var(--ouro); }
+  .hier .t { font: 600 30px/1 var(--titulo); font-variation-settings: 'SOFT' 100; }
+  .hier .s { font: italic 500 17px var(--titulo); font-variation-settings: 'SOFT' 100; color: var(--ouro); }
+  .hier .x { font-size: 12.5px; opacity: .82; }
+
+  .rodape { padding: 0 44px 30px; display: flex; justify-content: space-between; gap: 20px; color: var(--suave); font-size: 12px; flex-wrap: wrap; }
+  .rodape a { color: var(--urucum); }
+
+  @media (max-width: 1000px) {
+    .grade { grid-template-columns: 1fr; padding: 18px; }
+    .grade > * { grid-column: auto !important; }
+    .topo { grid-template-columns: 1fr; text-align: left; padding: 26px; }
+    .topo .meta { text-align: left; }
+    .erros { grid-template-columns: repeat(2, 1fr); }
+    .certos, .cores { grid-template-columns: repeat(2, 1fr); }
+    .fontes, .significado { grid-template-columns: 1fr; }
+    .versoes, .legenda { grid-template-columns: repeat(2, 1fr); }
+    .layouts { grid-template-columns: 1fr; }
+    .rodape { padding: 0 18px 24px; }
+  }
+  @media print {
+    @page { size: A3 landscape; margin: 8mm; }
+    body { background: none; }
+    .folha { margin: 0; width: 100%; box-shadow: none; border-radius: 0; zoom: .86; }
+  }
+</style>
+</head>
+<body>
+<article class="folha">
+
+  <header class="topo">
+    <img src="../logo/logo-horizontal-fundo-escuro.svg" alt="A Promessa de Abraão">
+    <h1>Manual de marca <i>em uma página</i></h1>
+    <div class="meta"><b>Direção “Tenda Aberta”</b><br>Versão 1.0 · 2026<br>Arquivos: <code>/logo</code> · <code>/templates</code></div>
+  </header>
+
+  <div class="grade">
+
+    <!-- 1. Significado -->
+    <section class="bloco c7">
+      <h2><span>01</span> O que o logo significa</h2>
+      <div class="significado">
+        <div class="simb"><img src="../logo/simbolo-fundo-escuro.svg" alt=""></div>
+        <ol>
+          <li><b>A tenda</b> é a casa de Abraão, peregrino, que recebeu estrangeiros na porta (Gn 18): uma igreja acolhedora.</li>
+          <li><b>A porta acesa</b> (urucum) diz a quem está na rua: tem lugar pra você.</li>
+          <li><b>A estrela</b> é a promessa de Gn 15:5, “olha para o céu e conta as estrelas”. Fica do lado de fora, como Abraão, levado para fora da tenda. Os quatro raios principais desenham, com sobriedade, uma cruz.</li>
+          <li><b>O “A”</b> da tenda é de “A Promessa” e de “Abraão”.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 2. Área de proteção -->
+    <section class="bloco c5">
+      <h2><span>02</span> Área de proteção</h2>
+      <div class="protecao">
+        <svg viewBox="0 0 400 220" aria-label="Área de proteção: espaço livre igual à altura da estrela, em volta de todo o logo">
+          <rect x="1" y="1" width="398" height="218" rx="10" fill="#F7EEE2"/>
+          <rect x="40" y="40" width="320" height="140" fill="none" stroke="#D1552E" stroke-width="1.5" stroke-dasharray="6 5"/>
+          <image href="../logo/logo-horizontal-colorido.svg" x="78" y="62" width="244" height="96"/>
+          <g fill="#D1552E" font-family="Figtree, sans-serif" font-size="13" font-weight="700" text-anchor="middle">
+            <path d="M200 6 V40 M200 180 V214 M6 110 H40 M360 110 H394" stroke="#D1552E" stroke-width="1.5"/>
+            <text x="214" y="27">x</text><text x="214" y="203">x</text><text x="23" y="102">x</text><text x="377" y="102">x</text>
+          </g>
+          <g transform="translate(330 14)"><rect width="56" height="20" rx="10" fill="#1E1D4A"/><text x="28" y="14" fill="#F7EEE2" font-family="Figtree, sans-serif" font-size="11" font-weight="700" text-anchor="middle">x = ★</text></g>
+        </svg>
+      </div>
+      <p>Deixe em volta do logo um espaço livre igual à <b>altura da estrela (x)</b>. Nenhum texto, foto ou borda entra nessa área.</p>
+    </section>
+
+    <!-- 3. Versões -->
+    <section class="bloco c7">
+      <h2><span>03</span> Versões e quando usar</h2>
+      <div class="versoes">
+        <div style="background:#F7EEE2"><img src="../logo/logo-vertical-colorido.svg" alt="Colorida"></div>
+        <div style="background:#1E1D4A"><img src="../logo/logo-vertical-fundo-escuro.svg" alt="Fundo escuro"></div>
+        <div style="background:#fff"><img src="../logo/logo-vertical-preto.svg" alt="Preta"></div>
+        <div style="background:#D1552E"><img src="../logo/logo-vertical-branco.svg" alt="Branca"></div>
+      </div>
+      <div class="legenda"><span><b>Colorida</b>: fundos claros (Areia, branco)</span><span><b>Fundo escuro</b>: céu noturno, Anil, fotos escuras</span><span><b>Preta</b>: impressão 1 cor, carimbo, xerox</span><span><b>Branca</b>: sobre Urucum, Madrugada ou fotos</span></div>
+      <div class="layouts">
+        <div><img src="../logo/logo-vertical-colorido.svg" alt="">Vertical (principal): cartazes, capas, camisetas</div>
+        <div><img src="../logo/logo-horizontal-colorido.svg" alt="" style="max-height:52px">Horizontal: rodapés, assinaturas, banners largos, fachada</div>
+        <div><img src="../logo/simbolo-colorido.svg" alt="" style="max-height:52px">Símbolo: perfil, favicon, selo</div>
+      </div>
+    </section>
+
+    <!-- 4. Tamanho mínimo -->
+    <section class="bloco c5">
+      <h2><span>04</span> Tamanho mínimo</h2>
+      <div class="minimos">
+        <div><img src="../logo/logo-vertical-colorido.svg" alt="" style="height:60px;width:auto"><b>Vertical</b><small>25 mm de largura (impresso)<br>120 px (tela)</small></div>
+        <div><img src="../logo/logo-horizontal-colorido.svg" alt="" style="height:30px;width:auto"><b>Horizontal</b><small>40 mm de largura<br>160 px</small></div>
+        <div><img src="../logo/simbolo-colorido.svg" alt="" style="height:24px;width:auto"><b>Símbolo</b><small>8 mm de altura<br>24 px (favicon: 16 px)</small></div>
+      </div>
+      <p style="margin-top:12px">Abaixo disso o nome fica ilegível: use só o símbolo. Para banner de rua, o logo deve ocupar pelo menos 1/5 da largura.</p>
+    </section>
+
+    <!-- 5. Usos incorretos -->
+    <section class="bloco c12">
+      <h2><span>05</span> Usos incorretos (não faça) e corretos</h2>
+      <div class="erros">
+        <div class="erro"><div class="caixa"><img src="../logo/logo-vertical-colorido.svg" alt="" style="transform:scaleX(1.55)"></div><p>Não estique nem achate</p></div>
+        <div class="erro"><div class="caixa"><img src="../logo/logo-vertical-colorido.svg" alt="" style="transform:rotate(-18deg)"></div><p>Não gire</p></div>
+        <div class="erro"><div class="caixa"><img src="../logo/logo-vertical-colorido.svg" alt="" style="filter:hue-rotate(120deg) saturate(1.6)"></div><p>Não troque as cores</p></div>
+        <div class="erro"><div class="caixa"><img src="../logo/logo-vertical-colorido.svg" alt="" style="filter:drop-shadow(4px 5px 0 #888) drop-shadow(0 0 8px #F4AD24)"></div><p>Sem sombras, brilhos ou efeitos</p></div>
+        <div class="erro"><div class="caixa" style="background:#34327A"><img src="../logo/logo-vertical-colorido.svg" alt=""></div><p>Não use a versão colorida em fundo escuro</p></div>
+        <div class="erro"><div class="caixa" style="background:repeating-linear-gradient(45deg,#F4AD24 0 9px,#D1552E 9px 18px,#F7EEE2 18px 27px)"><img src="../logo/logo-vertical-colorido.svg" alt=""></div><p>Não aplique sobre fundos ou fotos poluídas</p></div>
+        <div class="erro"><div class="caixa" style="flex-direction:column;gap:4px"><img src="../logo/simbolo-colorido.svg" alt="" style="height:36px"><span style="font:700 13px Arial, sans-serif;color:#1E1D4A">A Promessa de Abraão</span></div><p>Não reescreva o nome com outra fonte</p></div>
+        <div class="erro"><div class="caixa"><img src="../logo/simbolo-colorido.svg" alt="" style="transform:scaleX(-1);height:56px"></div><p>Não espelhe: a estrela fica sempre no alto, à direita</p></div>
+      </div>
+      <div class="certos">
+        <div class="certo"><div class="caixa" style="background:#F7EEE2;border:1px solid var(--linha)"><img src="../logo/logo-horizontal-colorido.svg" alt=""></div><p>Colorida sobre Areia ou branco</p></div>
+        <div class="certo"><div class="caixa" style="background:#1E1D4A"><img src="../logo/logo-horizontal-fundo-escuro.svg" alt=""></div><p>Fundo escuro sobre Anil</p></div>
+        <div class="certo"><div class="caixa" style="background:linear-gradient(135deg,#4b3a30,#24223a)"><img src="../logo/logo-horizontal-branco.svg" alt=""></div><p>Branca sobre foto escura e tranquila</p></div>
+        <div class="certo"><div class="caixa" style="background:#D1552E"><img src="../logo/logo-horizontal-fundo-urucum.svg" alt=""></div><p>Versão “sobre Urucum” (ou branca)</p></div>
+      </div>
+    </section>
+
+    <!-- 6. Paleta -->
+    <section class="bloco c7">
+      <h2><span>06</span> Paleta</h2>
+      <div class="cores">
+        <div class="cor"><div class="amostra" style="background:#1E1D4A;color:#F7EEE2">Anil</div><div class="dados"><b>#1E1D4A</b>RGB 30 29 74<br>CMYK ≈ 90 88 30 40<i>Céu noturno · fundo e texto</i></div></div>
+        <div class="cor"><div class="amostra" style="background:#34327A;color:#F7EEE2">Madrugada</div><div class="dados"><b>#34327A</b>RGB 52 50 122<br>CMYK ≈ 88 85 10 5<i>Apoio · degradês, painéis</i></div></div>
+        <div class="cor"><div class="amostra" style="background:#F4AD24;color:#1E1D4A">Ouro</div><div class="dados"><b>#F4AD24</b>RGB 244 173 36<br>CMYK ≈ 0 35 90 0<i>A estrela · destaques</i></div></div>
+        <div class="cor"><div class="amostra" style="background:#D1552E;color:#F7EEE2">Urucum</div><div class="dados"><b>#D1552E</b>RGB 209 85 46<br>CMYK ≈ 10 78 88 2<i>Calor · ação social</i></div></div>
+        <div class="cor"><div class="amostra" style="background:#F7EEE2;color:#1E1D4A;border:1px solid var(--linha);border-bottom:0">Areia</div><div class="dados"><b>#F7EEE2</b>RGB 247 238 226<br>CMYK ≈ 2 5 11 0<i>Papel · no lugar do branco</i></div></div>
+      </div>
+      <p style="margin-top:10px">Proporção: Anil 40% · Areia 25% · Madrugada 15% · Urucum 12% · Ouro 8%. Texto pequeno só em Anil sobre Areia ou Areia/Ouro sobre Anil. Urucum com texto, só em tamanhos grandes. CMYK aproximado: peça prova de cor à gráfica.</p>
+    </section>
+
+    <!-- 7. Tipografia -->
+    <section class="bloco c5">
+      <h2><span>07</span> Tipografia (Google Fonts)</h2>
+      <div class="fontes">
+        <div class="fonte"><div class="amostra fraunces">Aa</div><div class="acentos fraunces">Fraunces</div><p>Títulos, nomes e versículos (itálico). Peso 600, eixo Soft 100. Alternativa: Georgia.</p></div>
+        <div class="fonte"><div class="amostra figtree" style="font-weight:600">Aa</div><div class="acentos figtree" style="font-weight:600">Figtree</div><p>Textos, horários, endereços, chamadas em caixa alta. Pesos 400–700. Alternativa: Arial.</p></div>
+      </div>
+      <div class="hier">
+        <span class="k">Culto de</span>
+        <span class="t">Terça-feira</span>
+        <span class="s">com Pr. Nome do Pregador</span>
+        <span class="x">19h30 · Rua das Estrelas, 123 · ação, coração, irmã, você</span>
+      </div>
+    </section>
+
+    <!-- 8. Tom e fotos -->
+    <section class="bloco c6">
+      <h2><span>08</span> Jeito de falar</h2>
+      <ul>
+        <li>Acolhedor e direto: fale com <b>você</b>, como quem convida para a própria casa.</li>
+        <li>Frases curtas, sem “evangeliquês” e sem promessas exageradas.</li>
+        <li>Convide em vez de cobrar: “Tem lugar pra você”, “Venha servir com a gente”.</li>
+        <li>Uma ideia por peça. Se precisar explicar muito, use a legenda do post.</li>
+      </ul>
+    </section>
+    <section class="bloco c6">
+      <h2><span>09</span> Fotos e ação social</h2>
+      <ul>
+        <li>Pessoas reais, luz natural, expressões verdadeiras. Evite banco de imagem.</li>
+        <li>Pregador: foto vertical, do peito para cima, fundo simples. Entra sempre no <b>arco-porta</b>.</li>
+        <li>Ação social: só publique o rosto de quem foi atendido <b>com autorização</b>. Prefira voluntários, mãos servindo, comida, o lugar. Nunca use a fragilidade de alguém como propaganda.</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <footer class="rodape">
+    <span>A Promessa de Abraão · Identidade visual · Fontes: Fraunces e Figtree (licença livre SIL OFL).</span>
+    <span>Templates editáveis em <a href="../index.html#aplicacoes">/templates</a> · Passo a passo no README.md</span>
+  </footer>
+</article>
+</body>
+</html>

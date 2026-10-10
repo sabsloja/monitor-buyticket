@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capas de destaque · A Promessa de Abraão</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" crossorigin="anonymous" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&display=swap">
+<link rel="stylesheet" href="assets/marca.css">
+<style>
+  /* Cada capa: 1080×1080, ícone no centro (o Instagram mostra só um círculo no meio) */
+  .capa { display: flex; align-items: center; justify-content: center; --traco: var(--areia); --estrela: var(--ouro); --anel: rgba(247, 238, 226, .18); }
+  .capa.tema-noite { background: var(--anil); }
+  .capa.tema-areia { background: var(--areia); --traco: var(--anil); --estrela: var(--urucum); --anel: rgba(30, 29, 74, .14); }
+  .capa.tema-fogo  { background: var(--urucum); --estrela: var(--anil); --anel: rgba(247, 238, 226, .25); }
+  .capa::before { content: ''; position: absolute; inset: 120px; border-radius: 50%; border: 8px solid var(--anel); }
+  .capa svg.icone { width: 500px; height: 500px; position: relative; }
+  .icone .t { fill: none; stroke: var(--traco); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+  .icone .e { fill: var(--estrela); }
+
+  /* a capa "Cultos" usa o próprio símbolo, na versão certa para cada fundo */
+  .capa [data-logo] { width: 470px; display: none; position: relative; transform: translate(4px, 4px); }
+  .tema-noite [data-versao="fundo-escuro"], .tema-areia [data-versao="colorido"], .tema-fogo [data-versao="fundo-urucum"] { display: block; }
+</style>
+</head>
+<body data-template="capas-destaque" data-titulo="Capas de destaque (Instagram)" data-temas="noite:Anil (recomendado),areia:Areia,fogo:Urucum">
+<main class="palco">
+
+  <!-- =====================================================================
+       CAPAS DE DESTAQUE — 6 peças de 1080 × 1080
+       Escolha a cor de fundo no painel e baixe cada capa (ou todas).
+       No Instagram: Destaque → Editar destaque → Editar capa → escolha a imagem.
+       O nome do destaque (ex.: "Cultos") você digita no próprio Instagram.
+       ===================================================================== -->
+
+  <!-- CULTOS: o símbolo da marca -->
+  <div class="arte quadrado tema-noite capa" data-nome="Cultos" data-arquivo="destaque-cultos">
+    <div data-logo="simbolo" data-versao="fundo-escuro"></div>
+    <div data-logo="simbolo" data-versao="colorido"></div>
+    <div data-logo="simbolo" data-versao="fundo-urucum"></div>
+  </div>
+
+  <!-- AÇÃO SOCIAL: a tigela partilhada, com a estrela subindo como o vapor -->
+  <div class="arte quadrado tema-noite capa" data-nome="Ação social" data-arquivo="destaque-acao-social">
+    <svg class="icone" viewBox="0 0 200 200">
+      <path class="t" d="M34 106 H166 C166 144 138 166 100 166 C62 166 34 144 34 106 Z"/>
+      <path class="t" d="M76 180 H124"/>
+      <path class="t" d="M72 88 C64 78 80 70 72 58"/>
+      <path class="t" d="M128 88 C120 78 136 70 128 58"/>
+      <g transform="translate(78 22) scale(.44)"><path class="e" d="" data-estrela-path/></g>
+    </svg>
+  </div>
+
+  <!-- VERSÍCULOS: livro aberto -->
+  <div class="arte quadrado tema-noite capa" data-nome="Versículos" data-arquivo="destaque-versiculos">
+    <svg class="icone" viewBox="0 0 200 200">
+      <path class="t" d="M100 70 C82 58 56 56 32 62 V156 C56 150 82 152 100 164 C118 152 144 150 168 156 V62 C144 56 118 58 100 70 Z"/>
+      <path class="t" d="M100 70 V164"/>
+      <g transform="translate(138 8) scale(.42)"><path class="e" d="" data-estrela-path/></g>
+    </svg>
+  </div>
+
+  <!-- AVISOS: megafone -->
+  <div class="arte quadrado tema-noite capa" data-nome="Avisos" data-arquivo="destaque-avisos">
+    <svg class="icone" viewBox="0 0 200 200">
+      <path class="t" d="M38 88 V124 H62 L128 156 V56 L62 88 Z"/>
+      <path class="t" d="M64 124 L74 160 H92 L86 128"/>
+      <path class="t" d="M150 90 C158 98 158 114 150 122"/>
+      <g transform="translate(140 20) scale(.4)"><path class="e" d="" data-estrela-path/></g>
+    </svg>
+  </div>
+
+  <!-- AGENDA: calendário com a estrela marcando o dia -->
+  <div class="arte quadrado tema-noite capa" data-nome="Agenda" data-arquivo="destaque-agenda">
+    <svg class="icone" viewBox="0 0 200 200">
+      <rect class="t" x="36" y="52" width="128" height="116" rx="18"/>
+      <path class="t" d="M36 86 H164 M72 38 V62 M128 38 V62"/>
+      <g transform="translate(76 98) scale(.48)"><path class="e" d="" data-estrela-path/></g>
+    </svg>
+  </div>
+
+  <!-- ORAÇÃO: balão de conversa com coração (pedidos de oração) -->
+  <div class="arte quadrado tema-noite capa" data-nome="Oração" data-arquivo="destaque-oracao">
+    <svg class="icone" viewBox="0 0 200 200">
+      <path class="t" d="M52 50 H148 C160 50 170 60 170 72 V124 C170 136 160 146 148 146 H96 L62 172 V146 H52 C40 146 30 136 30 124 V72 C30 60 40 50 52 50 Z"/>
+      <path class="t" d="M100 124 C88 114 74 106 74 92 C74 84 80 78 88 78 C94 78 98 82 100 86 C102 82 106 78 112 78 C120 78 126 84 126 92 C126 106 112 114 100 124 Z"/>
+      <g transform="translate(146 12) scale(.4)"><path class="e" d="" data-estrela-path/></g>
+    </svg>
+  </div>
+
+</main>
+<script src="assets/html-to-image.js"></script>
+<script src="assets/marca-dados.js"></script>
+<script src="assets/marca.js"></script>
+<script>
+  // desenha a estrela da marca dentro dos ícones
+  document.querySelectorAll('[data-estrela-path]').forEach(function (p) { p.setAttribute('d', MARCA_DADOS.estrela.d); });
+</script>
+<script src="assets/editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banner — Evento · A Promessa de Abraão</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" crossorigin="anonymous" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&display=swap">
+<link rel="stylesheet" href="assets/marca.css">
+<style>
+  .evento::after { content: ''; position: absolute; z-index: 1; left: -300px; bottom: -520px; width: 1500px; height: 1000px;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(209, 85, 46, .5), rgba(209, 85, 46, 0) 70%); pointer-events: none; }
+
+  /* coluna da direita: painel de cobogó + foto em arco */
+  .e-painel { position: absolute; z-index: 1; right: 0; top: 0; bottom: 0; width: 760px; background-color: var(--madrugada); border-radius: 380px 0 0 0; }
+  .e-foto-area { position: absolute; z-index: 2; right: 210px; top: 150px; width: 520px; height: 760px; }
+  .e-foto-area .contorno { position: absolute; inset: 0; transform: translate(26px, -26px); border: 5px solid var(--ouro); }
+  .e-foto-area .foto { position: absolute; inset: 0; box-shadow: 0 30px 60px rgba(0, 0, 0, .3); background: var(--anil); }
+  .e-simbolo { display: none; position: absolute; inset: 0; align-items: center; justify-content: center; background: var(--anil); }
+  .e-simbolo [data-logo] { width: 330px; }
+  .sem-foto .e-simbolo { display: flex; }
+  .sem-foto .e-foto-area .foto { display: none; }
+
+  .e-conteudo { position: absolute; z-index: 3; left: 140px; top: 140px; bottom: 96px; width: 940px; display: flex; flex-direction: column; }
+  .e-chamada { color: var(--ouro); }
+  .e-titulo-linha { position: relative; margin-top: 26px; align-self: flex-start; max-width: 100%; padding-right: 96px; }
+  .e-titulo { font-size: 158px; line-height: .94; max-height: 310px; overflow: hidden; }
+  .e-titulo-linha [data-estrela] { position: absolute; width: 104px; height: 104px; right: 0; top: -34px; }
+  .e-sub { font-size: 50px; line-height: 1.15; margin-top: 30px; opacity: .9; }
+
+  .e-info { display: flex; align-items: center; gap: 40px; margin-top: 56px; }
+  .e-data { text-align: center; color: var(--ouro); flex: none; }
+  .e-dia { font-size: 140px; line-height: .85; display: block; }
+  .e-mes { font: 800 36px/1 var(--fonte-texto); letter-spacing: .3em; margin-top: 10px; display: block; padding-left: .3em; }
+  .e-sep { width: 4px; align-self: stretch; background: var(--areia); opacity: .3; border-radius: 2px; }
+  .e-quando { font: 700 38px/1.2 var(--fonte-texto); }
+  .e-onde { font: 400 32px/1.3 var(--fonte-texto); opacity: .85; margin-top: 6px; }
+  .e-com { font: 600 32px/1.3 var(--fonte-texto); color: var(--ouro); margin-top: 14px; }
+
+  .e-logo { margin-top: auto; height: 76px; }
+  .e-logo svg { width: auto; height: 76px; }
+</style>
+</head>
+<body data-template="banner-evento" data-titulo="Banner — Evento">
+<main class="palco">
+
+  <!-- =====================================================================
+       BANNER 1920 × 1080 — EVENTOS (telão, YouTube, Facebook, WhatsApp)
+       No navegador: clique nos textos para editar, clique na foto para
+       escolher (ou desmarque "Usar foto" no painel) e baixe o PNG.
+       Para GRÁFICA (impresso): use o botão "Salvar PDF para gráfica".
+       O PDF é vetorial e pode ser ampliado sem perder qualidade.
+       Pelo código: procure os comentários "TROQUE AQUI".
+       ===================================================================== -->
+  <div class="arte banner tema-noite evento" data-arquivo="banner-evento">
+    <div class="ceu" data-estrelas="170" data-semente="23"></div>
+    <div class="e-painel" data-cobogo="#F7EEE2" data-cobogo-opacidade=".07" data-cobogo-tamanho="150"></div>
+
+    <div class="e-foto-area">
+      <div class="contorno arco"></div>
+      <!-- ===================== FOTO (pregador ou convidado) =====================
+           TROQUE AQUI: a foto. Pelo código: copie para templates/fotos/ e
+           escreva o nome dentro de src="", ex.: <img src="fotos/convidado.jpg" alt="">
+           ====================================================================== -->
+      <div class="foto arco" data-foto="Foto do convidado" data-opcional>
+        <img src="" alt="Foto do convidado">
+        <div class="foto-vazia">
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"><circle cx="50" cy="36" r="16"/><path d="M18 88c4-18 17-28 32-28s28 10 32 28"/></svg>
+          <span>Foto do convidado</span>
+          <small>clique aqui para escolher</small>
+        </div>
+      </div>
+      <div class="e-simbolo arco"><div data-logo="simbolo" data-versao="fundo-escuro"></div></div>
+    </div>
+
+    <div class="e-conteudo">
+      <!-- TROQUE AQUI: tipo de evento -->
+      <p class="chamada e-chamada" data-editavel>Conferência</p>
+      <div class="e-titulo-linha">
+        <!-- TROQUE AQUI: nome do evento -->
+        <h1 class="titulo e-titulo" data-editavel data-ajustar=".55" data-altura-max="310">Noite da Promessa</h1>
+        <span data-estrela="ouro"></span>
+      </div>
+      <!-- TROQUE AQUI: frase / tema -->
+      <p class="titulo italico e-sub" data-editavel>“Olha para o céu e conta as estrelas”</p>
+
+      <div class="e-info">
+        <div class="e-data">
+          <!-- TROQUE AQUI: dia e mês -->
+          <span class="titulo e-dia" data-editavel>24</span>
+          <span class="e-mes" data-editavel>OUT</span>
+        </div>
+        <span class="e-sep"></span>
+        <div>
+          <!-- TROQUE AQUI: dia da semana/horário, endereço e convidados -->
+          <p class="e-quando" data-editavel>Sexta-feira · 19h30</p>
+          <p class="e-onde" data-editavel>Rua das Estrelas, 123 · Centro</p>
+          <p class="e-com" data-editavel>Com Pr. Nome Convidado e Pra. Nome Convidada</p>
+        </div>
+      </div>
+
+      <div class="e-logo" data-logo="logo-horizontal" data-versao="fundo-escuro"></div>
+    </div>
+  </div>
+
+</main>
+<script src="assets/html-to-image.js"></script>
+<script src="assets/marca-dados.js"></script>
+<script src="assets/marca.js"></script>
+<script src="assets/editor.js"></script>
+</body>
+</html>

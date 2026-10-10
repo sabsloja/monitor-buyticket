@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Story — Aviso · A Promessa de Abraão</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" crossorigin="anonymous" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&display=swap">
+<link rel="stylesheet" href="assets/marca.css">
+<style>
+  .aviso { padding: 0 84px 250px; display: flex; flex-direction: column; }
+  .a-topo { position: absolute; left: 0; right: 0; top: 0; height: 430px; background-color: var(--anil); border-radius: 0 0 0 220px; }
+  .a-topo [data-estrela] { position: absolute; width: 150px; height: 150px; right: 110px; top: 250px; }
+  .aviso > .conteudo { position: relative; z-index: 2; display: flex; flex-direction: column; flex: 1; margin-top: 392px; }
+
+  .a-pilula { background: var(--urucum); color: var(--areia); align-self: flex-start; }
+  .a-titulo { font-size: 124px; line-height: 1; margin-top: 64px; color: var(--anil); max-height: 360px; overflow: hidden; }
+  .a-texto { font-size: 44px; line-height: 1.38; margin-top: 44px; color: var(--anil); opacity: .88; max-height: 340px; overflow: hidden; }
+
+  .a-cartao { margin-top: auto; background: var(--anil); color: var(--areia); border-radius: 44px; padding: 44px 50px; display: grid; gap: 26px; }
+  .a-linha { display: grid; grid-template-columns: 150px 1fr; gap: 20px; align-items: baseline; }
+  .a-linha b { font: 700 24px/1.2 var(--fonte-texto); letter-spacing: .2em; text-transform: uppercase; color: var(--ouro); }
+  .a-linha span { font: 600 36px/1.25 var(--fonte-texto); }
+
+  .a-logo { height: 70px; margin-top: 44px; align-self: center; }
+  .a-logo svg { width: auto; height: 70px; }
+</style>
+</head>
+<body data-template="story-aviso" data-titulo="Story — Aviso">
+<main class="palco">
+
+  <!-- =====================================================================
+       STORY 1080 × 1920 — AVISO
+       No navegador: clique nos textos para editar e use "Baixar PNG".
+       Pelo código: procure os comentários "TROQUE AQUI".
+       ===================================================================== -->
+  <div class="arte story tema-areia aviso" data-arquivo="story-aviso">
+    <div class="a-topo" data-cobogo="#F7EEE2" data-cobogo-opacidade=".09" data-cobogo-tamanho="150">
+      <span data-estrela="ouro"></span>
+    </div>
+
+    <div class="conteudo">
+      <!-- TROQUE AQUI: selo (ex.: Aviso, Importante, Agenda) -->
+      <span class="pilula a-pilula" data-editavel>Aviso</span>
+
+      <!-- TROQUE AQUI: título do aviso -->
+      <h1 class="titulo a-titulo" data-editavel data-ajustar=".55" data-altura-max="360">Noite de oração e vigília</h1>
+
+      <!-- TROQUE AQUI: texto do aviso -->
+      <p class="texto a-texto" data-editavel data-ajustar=".7" data-altura-max="340">Nesta sexta, o culto vira vigília. Venha com a sua família, traga a sua Bíblia e um coração aberto. Tem lugar para você.</p>
+
+      <div class="a-cartao">
+        <!-- TROQUE AQUI: as informações (pode apagar uma linha inteira no código) -->
+        <div class="a-linha"><b data-editavel>Quando</b><span data-editavel>Sexta, 24 de outubro · 22h</span></div>
+        <div class="a-linha"><b data-editavel>Onde</b><span data-editavel>Rua das Estrelas, 123 · Centro</span></div>
+        <div class="a-linha"><b data-editavel>Traga</b><span data-editavel>Bíblia, cobertor e um lanche para partilhar</span></div>
+      </div>
+
+      <div class="a-logo" data-logo="logo-horizontal" data-versao="colorido"></div>
+    </div>
+  </div>
+
+</main>
+<script src="assets/html-to-image.js"></script>
+<script src="assets/marca-dados.js"></script>
+<script src="assets/marca.js"></script>
+<script src="assets/editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Story — Culto de Terça · A Promessa de Abraão</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" crossorigin="anonymous" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&display=swap">
+<link rel="stylesheet" href="assets/marca.css">
+<link rel="stylesheet" href="assets/story-culto.css">
+</head>
+<body data-template="story-culto-terca" data-titulo="Story — Culto de Terça">
+<main class="palco">
+
+  <!-- =====================================================================
+       STORY 1080 × 1920 — CULTO DE TERÇA
+       ---------------------------------------------------------------------
+       JEITO MAIS FÁCIL: abra este arquivo no Chrome, clique nos textos para
+       editar, clique na área tracejada para escolher a foto e use o botão
+       "Baixar PNG" no painel da esquerda.
+
+       PELO CÓDIGO: procure os comentários "TROQUE AQUI" abaixo.
+       ===================================================================== -->
+  <div class="arte story tema-noite culto" data-arquivo="story-culto-terca">
+
+    <div class="ceu" data-estrelas="150" data-semente="15"></div>
+
+    <!-- TROQUE AQUI: chamada pequena -->
+    <p class="chamada culto-chamada" data-editavel>Culto de</p>
+
+    <div class="culto-titulo">
+      <!-- TROQUE AQUI: dia da semana -->
+      <h1 class="titulo culto-dia" data-editavel>Terça</h1>
+      <span data-estrela="ouro"></span>
+    </div>
+
+    <!-- ===================== FOTO DO PREGADOR =====================
+         TROQUE AQUI: a foto.
+         • No navegador: clique na área tracejada e escolha a foto.
+         • Pelo código: copie a foto para a pasta templates/fotos/ e
+           escreva o nome dela dentro de src="", por exemplo:
+             <img src="fotos/pastor-joao.jpg" alt="Foto do pregador">
+           Dica: foto vertical, do peito para cima, com fundo simples.
+         ============================================================ -->
+    <div class="culto-foto-area">
+      <div class="contorno arco"></div>
+      <div class="foto arco" data-foto="Foto do pregador">
+        <img src="" alt="Foto do pregador">
+        <div class="foto-vazia">
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"><circle cx="50" cy="36" r="16"/><path d="M18 88c4-18 17-28 32-28s28 10 32 28"/></svg>
+          <span>Foto do pregador</span>
+          <small>clique aqui para escolher</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- TROQUE AQUI: nome do pregador (diminui sozinho se for muito longo) -->
+    <h2 class="titulo culto-nome" data-editavel data-ajustar=".55" data-altura-max="170">Pr. Nome do Pregador</h2>
+    <!-- TROQUE AQUI: de onde ele vem (ou apague o texto) -->
+    <p class="texto culto-origem" data-editavel>Pregador convidado · Igreja de origem</p>
+
+    <div class="culto-info">
+      <!-- TROQUE AQUI: horário -->
+      <span class="titulo culto-hora" data-editavel>19h30</span>
+      <span class="culto-sep"></span>
+      <div>
+        <!-- TROQUE AQUI: data e endereço -->
+        <p class="culto-data" data-editavel>Terça-feira, 14 de outubro</p>
+        <p class="culto-local" data-editavel>Rua das Estrelas, 123 · Centro</p>
+      </div>
+    </div>
+
+    <div class="culto-logo" data-logo="logo-horizontal" data-versao="fundo-escuro"></div>
+  </div>
+
+</main>
+<script src="assets/html-to-image.js"></script>
+<script src="assets/marca-dados.js"></script>
+<script src="assets/marca.js"></script>
+<script src="assets/editor.js"></script>
+</body>
+</html>

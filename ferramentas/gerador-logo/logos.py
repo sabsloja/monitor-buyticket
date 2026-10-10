@@ -12,6 +12,8 @@ VERSOES = {
                          desc='Versão colorida — para fundos claros (Areia ou branco).'),
     'fundo-escuro': dict(tenda=PAL['areia'], porta=PAL['urucum'], estrela=PAL['ouro'], l1=PAL['areia'], l2=PAL['ouro'],
                          desc='Versão para fundo escuro (céu noturno / Anil).'),
+    'fundo-urucum': dict(tenda=PAL['areia'], porta=PAL['ouro'],   estrela=PAL['areia'], l1=PAL['areia'], l2=PAL['anil'],
+                         desc='Versão para fundo Urucum (peças de ação social, culto de sexta).'),
     'preto':        dict(tenda='#000000', porta=None, estrela='#000000', l1='#000000', l2='#000000',
                          desc='Versão monocromática preta — impressão 1 cor, carimbo, documentos.'),
     'branco':       dict(tenda='#FFFFFF', porta=None, estrela='#FFFFFF', l1='#FFFFFF', l2='#FFFFFF',

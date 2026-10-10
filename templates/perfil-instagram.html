@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Imagem de perfil · A Promessa de Abraão</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" crossorigin="anonymous" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&display=swap">
+<link rel="stylesheet" href="assets/marca.css">
+<style>
+  .perfil { display: flex; align-items: center; justify-content: center; }
+  .perfil [data-logo] { width: 560px; display: none; transform: translate(4px, 6px); } /* leve ajuste óptico: a estrela é leve, a tenda é pesada */
+  .tema-noite [data-versao="fundo-escuro"], .tema-areia [data-versao="colorido"], .tema-fogo [data-versao="fundo-urucum"] { display: block; }
+  .tema-fogo { background: var(--urucum); }
+  .tema-noite { background: var(--anil); }
+
+  /* guia do recorte redondo do Instagram (não sai na imagem) */
+  .guia-circulo { position: absolute; inset: 0; border-radius: 50%; box-shadow: 0 0 0 2000px rgba(0, 0, 0, .45); outline: 4px dashed rgba(255, 255, 255, .6); outline-offset: -4px; pointer-events: none; }
+  body.preview .guia-circulo { display: none; }
+</style>
+</head>
+<body data-template="perfil-instagram" data-titulo="Imagem de perfil (Instagram)" data-temas="noite:Anil (recomendado),areia:Areia,fogo:Urucum">
+<main class="palco">
+
+  <!-- =====================================================================
+       IMAGEM DE PERFIL 1080 × 1080
+       O Instagram corta em círculo; a área escura mostra o que fica de fora.
+       Escolha a cor de fundo no painel e clique em "Baixar PNG".
+       (Também existe pronta em SVG: logo/perfil-instagram.svg)
+       ===================================================================== -->
+  <div class="arte quadrado tema-noite perfil" data-arquivo="perfil-instagram">
+    <div data-logo="simbolo" data-versao="fundo-escuro"></div>
+    <div data-logo="simbolo" data-versao="colorido"></div>
+    <div data-logo="simbolo" data-versao="fundo-urucum"></div>
+    <div class="guia-circulo nao-exportar"></div>
+  </div>
+
+</main>
+<script src="assets/html-to-image.js"></script>
+<script src="assets/marca-dados.js"></script>
+<script src="assets/marca.js"></script>
+<script src="assets/editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+/* =====================================================================
+   A PROMESSA DE ABRAÃO — estilos da marca usados por todos os templates
+   ---------------------------------------------------------------------
+   Você NÃO precisa mexer aqui para trocar foto, nome ou horário.
+   Isso se faz direto no arquivo de cada template (ou clicando no
+   navegador). Este arquivo guarda cores, fontes e peças visuais.
+   ===================================================================== */
+
+:root {
+  /* Paleta oficial */
+  --anil: #1E1D4A;       /* céu noturno — fundos escuros e textos */
+  --madrugada: #34327A;  /* apoio do céu — degradês e camadas */
+  --ouro: #F4AD24;       /* a estrela da promessa — destaques */
+  --urucum: #D1552E;     /* calor, acolhimento, ação */
+  --areia: #F7EEE2;      /* fundo claro, papel — no lugar do branco */
+
+  /* Tipografia oficial (Google Fonts, com alternativas caso falte internet) */
+  --fonte-titulo: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --fonte-texto: 'Figtree', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ---------------------------------------------------------------------
+   1. A ARTE (a peça em si, no tamanho real)
+   --------------------------------------------------------------------- */
+.arte {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: var(--fonte-texto);
+  color: var(--areia);
+  background: var(--anil);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+.arte.story    { width: 1080px; height: 1920px; }
+.arte.banner   { width: 1920px; height: 1080px; }
+.arte.quadrado { width: 1080px; height: 1080px; }
+.arte *, .arte *::before, .arte *::after { box-sizing: border-box; }
+:where(.arte) :where(h1, h2, h3, p) { margin: 0; }  /* :where = não atrapalha as margens dos templates */
+
+/* Temas de cor */
+.tema-noite { background: radial-gradient(120% 70% at 85% 8%, var(--madrugada) 0%, var(--anil) 58%); color: var(--areia); }
+.tema-fogo  { background: radial-gradient(120% 70% at 85% 8%, #E06A3C 0%, var(--urucum) 60%); color: var(--areia); }
+.tema-areia { background: var(--areia); color: var(--anil); }
+
+/* Títulos em Fraunces “macia” (eixo SOFT no máximo = cantos arredondados, acolhedor) */
+.titulo {
+  font-family: var(--fonte-titulo);
+  font-variation-settings: 'SOFT' 100, 'WONK' 0;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  line-height: .95;
+  letter-spacing: -.01em;
+  text-wrap: balance;   /* evita palavra sozinha na última linha */
+}
+.titulo.italico { font-style: italic; font-weight: 500; }
+
+/* Chamada pequena em caixa-alta (ex.: “CULTO DE”, “AÇÃO SOCIAL”) */
+.chamada {
+  font-family: var(--fonte-texto);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .28em;
+  font-size: 34px;
+  line-height: 1.2;
+}
+
+.texto { font-family: var(--fonte-texto); font-weight: 400; line-height: 1.35; }
+
+/* Selo em pílula (ex.: “AVISO”) */
+.pilula {
+  display: inline-block;
+  padding: 14px 30px 12px;
+  border-radius: 999px;
+  font: 700 30px/1 var(--fonte-texto);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------------------
+   2. PEÇAS GRÁFICAS DA MARCA
+   --------------------------------------------------------------------- */
+
+/* Logo (desenhado pelo marca.js dentro de <div data-logo="...">) */
+[data-logo] { display: block; line-height: 0; }
+[data-logo] svg { width: 100%; height: 100%; display: block; }
+
+/* Estrela solta da marca: <span data-estrela="ouro" style="width:120px;height:120px"></span> */
+[data-estrela] { display: inline-block; line-height: 0; }
+[data-estrela] svg { width: 100%; height: 100%; display: block; }
+
+/* Céu contável: campo de estrelas gerado pelo marca.js */
+.ceu { position: absolute; inset: 0; pointer-events: none; }
+.ceu svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* Cobogó de estrelas: padrão geométrico gerado pelo marca.js (data-cobogo) */
+[data-cobogo] { background-repeat: repeat; }
+
+/* Arco / portal — a “porta da tenda”, moldura padrão das fotos */
+.arco { border-radius: 9999px 9999px 36px 36px; }
+
+/* ---------------------------------------------------------------------
+   3. ÁREA DE FOTO (onde entra a foto do pregador / da ação)
+   --------------------------------------------------------------------- */
+.foto {
+  position: relative;
+  overflow: hidden;
+  background: rgba(247, 238, 226, .08);
+  --zoom: 1; --pos-x: 50%; --pos-y: 30%;
+}
+.foto > img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: var(--pos-x) var(--pos-y);
+  transform: scale(var(--zoom));
+  transform-origin: var(--pos-x) var(--pos-y);
+  display: none;
+}
+.foto.tem-foto > img { display: block; }
+
+/* Placeholder: aparece enquanto não há foto */
+.foto-vazia {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px;
+  border: 6px dashed rgba(247, 238, 226, .55);
+  border-radius: inherit;
+  color: rgba(247, 238, 226, .8);
+  text-align: center;
+  font: 700 30px/1.25 var(--fonte-texto);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: 40px;
+}
+.foto-vazia small { font-size: 24px; font-weight: 500; letter-spacing: .04em; text-transform: none; opacity: .85; }
+.foto-vazia svg { width: 110px; height: 110px; opacity: .9; }
+.foto.tem-foto .foto-vazia { display: none; }
+.tema-areia .foto { background: rgba(30, 29, 74, .06); }
+.tema-areia .foto-vazia { border-color: rgba(30, 29, 74, .45); color: rgba(30, 29, 74, .75); }
+
+/* ---------------------------------------------------------------------
+   4. EDITOR (painel lateral, escala de visualização) — não vai para a imagem
+   --------------------------------------------------------------------- */
+html, body { margin: 0; height: 100%; }
+body.editor {
+  display: flex;
+  background: #16151F;
+  color: #ECE8F3;
+  font: 15px/1.5 var(--fonte-texto);
+  overflow: hidden;
+}
+.painel {
+  width: 330px; flex: none;
+  height: 100%;
+  overflow-y: auto;
+  padding: 22px 22px 40px;
+  background: #1F1E2C;
+  border-right: 1px solid #2E2C40;
+  box-sizing: border-box;
+}
+.painel a.voltar { color: #B9B4D6; text-decoration: none; font-size: 13px; }
+.painel a.voltar:hover { color: #fff; }
+.painel h1 { font: 600 22px/1.2 var(--fonte-titulo); font-variation-settings: 'SOFT' 100; margin: 14px 0 4px; color: #fff; }
+.painel .tamanho { color: #8E89AE; font-size: 13px; margin-bottom: 16px; }
+.painel h2 { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--ouro); margin: 22px 0 8px; }
+.painel ol, .painel ul { padding-left: 18px; margin: 0; color: #C9C4E0; font-size: 13.5px; }
+.painel li { margin-bottom: 6px; }
+.painel label { display: block; font-size: 13px; color: #C9C4E0; margin: 10px 0 4px; }
+.painel input[type=range] { width: 100%; accent-color: var(--ouro); }
+.painel select { width: 100%; padding: 8px; border-radius: 8px; background: #2A2940; color: #fff; border: 1px solid #3A3852; font: inherit; }
+.painel .check { display: flex; gap: 8px; align-items: center; margin: 10px 0; cursor: pointer; }
+.painel .check input { accent-color: var(--ouro); width: 16px; height: 16px; }
+.painel button {
+  display: block; width: 100%;
+  margin-top: 8px; padding: 11px 14px;
+  border-radius: 10px; border: 1px solid #3A3852;
+  background: #2A2940; color: #fff;
+  font: 600 14px/1.2 var(--fonte-texto);
+  cursor: pointer; text-align: left;
+}
+.painel button:hover { background: #34324D; }
+.painel button.principal { background: var(--ouro); color: var(--anil); border-color: var(--ouro); text-align: center; font-size: 15px; padding: 14px; }
+.painel button.principal:hover { background: #FFC24A; }
+.painel .status { min-height: 20px; margin-top: 10px; font-size: 13px; color: #B9F3C9; }
+.painel .status.erro { color: #FFB4A0; }
+.painel .dica { margin-top: 18px; padding: 12px; border-radius: 10px; background: #26253A; color: #A9A4C6; font-size: 12.5px; }
+.painel code { background: #2E2C44; padding: 1px 5px; border-radius: 4px; font-size: 12px; color: #FFD78A; }
+
+.palco {
+  flex: 1; height: 100%;
+  overflow: auto;
+  display: flex; align-items: center; justify-content: center;
+  padding: 32px; box-sizing: border-box;
+}
+.moldura { position: relative; flex: none; box-shadow: 0 30px 80px rgba(0,0,0,.45); }
+.moldura > .arte { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+
+/* Várias artes na mesma página (capas de destaque) */
+.palco.grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 28px; align-content: start; justify-items: center; }
+.cartao { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.cartao button { padding: 8px 14px; border-radius: 999px; border: 0; background: var(--ouro); color: var(--anil); font: 700 13px var(--fonte-texto); cursor: pointer; }
+.cartao .rotulo { font-size: 13px; color: #C9C4E0; }
+
+/* Textos editáveis: contorno tracejado ao passar o mouse */
+body.editor:not(.preview) [data-editavel] { white-space: pre-line; cursor: text; border-radius: 6px; }
+body.editor:not(.preview):not(.exportando) [data-editavel]:hover { outline: 5px dashed rgba(244, 173, 36, .85); outline-offset: 10px; }
+body.editor:not(.preview):not(.exportando) [data-editavel]:focus { outline: 5px solid var(--ouro); outline-offset: 10px; }
+body.editor:not(.preview) .foto { cursor: pointer; }
+body.editor:not(.preview):not(.exportando) .foto:hover .foto-vazia { border-color: var(--ouro); color: var(--ouro); }
+
+/* Faixas que mostram onde a interface do Instagram cobre o story */
+.zonas-seguras { position: absolute; inset: 0; pointer-events: none; display: none; z-index: 50; }
+body.mostrar-zonas .zonas-seguras { display: block; }
+.zonas-seguras div {
+  position: absolute; left: 0; right: 0; height: 250px;
+  background: repeating-linear-gradient(-45deg, rgba(255, 70, 70, .30) 0 18px, rgba(255, 70, 70, .14) 18px 36px);
+  color: #fff; font: 700 28px var(--fonte-texto); display: flex; align-items: center; justify-content: center;
+  text-shadow: 0 2px 6px rgba(0,0,0,.6);
+}
+.zonas-seguras .topo { top: 0; }
+.zonas-seguras .base { bottom: 0; }
+
+/* Modo pré-visualização (dentro do index.html) */
+body.preview { background: transparent; }
+body.preview .painel { display: none; }
+body.preview .palco { padding: 0; overflow: hidden; }
+body.preview .moldura { box-shadow: none; }
+body.preview .palco.grade { grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 10px; }
+body.preview .cartao .rotulo { display: none; }
+
+/* Modo tela cheia para tirar print */
+body.modo-print .painel { display: none; }
+body.modo-print { background: #000; }
+body.modo-print .palco { padding: 0; }
+body.modo-print .moldura { box-shadow: none; }
+
+/* Impressão / Salvar como PDF: só a arte, no tamanho real */
+@media print {
+  body.editor { display: block; background: none; overflow: visible; }
+  .painel, .zonas-seguras, .cartao button, .cartao .rotulo { display: none !important; }
+  .palco { display: block; padding: 0; overflow: visible; height: auto; }
+  .moldura { box-shadow: none; width: auto !important; height: auto !important; break-after: page; }
+  .moldura > .arte { position: relative; transform: none !important; }
+  .foto-vazia { display: none; }
+}

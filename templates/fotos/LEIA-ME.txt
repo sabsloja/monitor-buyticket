@@ -1,0 +1,7 @@
+Coloque aqui as fotos que você quiser usar pelo código nos templates.
+
+Exemplo: copie a foto "pastor-joao.jpg" para esta pasta e, no template,
+troque  <img src="" ...>  por  <img src="fotos/pastor-joao.jpg" ...>
+
+Mais fácil: abra o template no Chrome e clique na área tracejada da foto.
+Assim a foto também sai no botão "Baixar PNG".
